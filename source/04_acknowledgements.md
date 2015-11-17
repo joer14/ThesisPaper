@@ -2,9 +2,26 @@
 
 <!-- This is for acknowledging all of the people who helped out -->
 
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam congue fermentum ante, semper porta nisl consectetur ut. Duis ornare sit amet dui ac faucibus. Phasellus ullamcorper leo vitae arcu ultricies cursus. Duis tristique lacus eget metus bibendum, at dapibus ante malesuada. In dictum nulla nec porta varius. Fusce et elit eget sapien fringilla maximus in sit amet dui.
 
-Mauris eget blandit nisi, faucibus imperdiet odio. Suspendisse blandit dolor sed tellus venenatis, venenatis fringilla turpis pretium. Donec pharetra arcu vitae euismod tincidunt. Morbi ut turpis volutpat, ultrices felis non, finibus justo. Proin convallis accumsan sem ac vulputate. Sed rhoncus ipsum eu urna placerat, sed rhoncus erat facilisis. Praesent vitae vestibulum dui. Proin interdum tellus ac velit varius, sed finibus turpis placerat.
+The models used in this tool were introduced Mohammad M. Ghassemi, Stefan E. Richter, Ifeoma M. Eche, Tszyi W. Chen, John Danziger, and Leo A. Celi in their paper A data-driven approach to optimized medication dosing: a focus on heparin [@ghassemi2014data]. Without Mohammad’s support this project would not have been feasible.
+
+Additionally, data used in these models was sourced from the MIMIC-II and MIMIC-III (@MIMICII) medical databases, a project supported by the MIT Lab for Computational Physiology. 
+
+Furthermore, I have many advisors who helped me with this project:
+
+- Mohammad M. Ghassemi 
+- [Sri Kurniawan](https://users.soe.ucsc.edu/~srikur/) 
+- [Matthew Guthaus](https://users.soe.ucsc.edu/~mrg/) 
+- [Leo Celi](https://connects.catalyst.harvard.edu/profiles/display/person/58103) 
+  
+
+Additionally the following people were very influential in preparing me for this project:
+
+- [James Davis](https://users.soe.ucsc.edu/~davis/) 
+- [Phokion Kolaitis](https://users.soe.ucsc.edu/~kolaitis/) 
+- [Philip Strong](http://www.pamf.org/dr-philip-strong.html) 
+  
+Finally, this project would not have been possible without the unwavering moral and technical support of my parents [Howard Rowley](http://www.uwhealth.org/findadoctor/profile/howard-a-rowley-md/7329) and [Carol Diamond](http://www.uwhealth.org/findadoctor/profile/carol-a-diamond-md/5867).
 
 <!-- Use the \newpage command to force a new page -->
 
