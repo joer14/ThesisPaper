@@ -1,4 +1,4 @@
-# Literature review, with maths
+# Literature Review
 
 <!--
 After the introductory chapter, it seems fairly common to 

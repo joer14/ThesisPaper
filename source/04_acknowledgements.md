@@ -3,7 +3,7 @@
 <!-- This is for acknowledging all of the people who helped out -->
 
 
-The models used in this tool were introduced Mohammad M. Ghassemi, Stefan E. Richter, Ifeoma M. Eche, Tszyi W. Chen, John Danziger, and Leo A. Celi in their paper A data-driven approach to optimized medication dosing: a focus on heparin [@ghassemi2014data]. Without Mohammad’s support this project would not have been feasible.
+The models used in this tool were introduced Mohammad M. Ghassemi, Stefan E. Richter, Ifeoma M. Eche, Tszyi W. Chen, John Danziger, and Leo A. Celi in their paper A data-driven approach to optimized medication dosing: a focus on heparin <!-- [@ghassemi2014data] -->. This project would not have been possible without Mohammad’s support.
 
 Additionally, data used in these models was sourced from the MIMIC-II and MIMIC-III (@MIMICII) medical databases, a project supported by the MIT Lab for Computational Physiology. 
 
