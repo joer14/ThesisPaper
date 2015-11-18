@@ -155,16 +155,17 @@
                 <ul>
                 <li><a href="#abstract">Abstract</a></li>
                 <li><a href="#acknowledgements">Acknowledgements</a></li>
-                <li><a href="#introduction-with-a-citation"><span class="toc-section-number">1</span> Introduction, with a citation</a><ul>
-                <li><a href="#background"><span class="toc-section-number">1.1</span> Background</a></li>
-                </ul></li>
+                <li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
                 <li><a href="#literature-review-with-maths"><span class="toc-section-number">2</span> Literature review, with maths</a><ul>
-                <li><a href="#introduction"><span class="toc-section-number">2.1</span> Introduction</a></li>
-                <li><a href="#the-middle"><span class="toc-section-number">2.2</span> The middle</a></li>
-                <li><a href="#conclusion"><span class="toc-section-number">2.3</span> Conclusion</a></li>
+                <li><a href="#traditional-dosing"><span class="toc-section-number">2.1</span> Traditional Dosing</a></li>
+                <li><a href="#high-level"><span class="toc-section-number">2.2</span> High Level</a></li>
+                <li><a href="#prediction"><span class="toc-section-number">2.3</span> Prediction</a><ul>
+                <li><a href="#logistic-regression"><span class="toc-section-number">2.3.1</span> Logistic Regression</a></li>
+                </ul></li>
+                <li><a href="#summary-of-their-results"><span class="toc-section-number">2.4</span> Summary of their results</a></li>
                 </ul></li>
                 <li><a href="#system-explanation"><span class="toc-section-number">3</span> System Explanation</a><ul>
-                <li><a href="#goals-of-system"><span class="toc-section-number">3.1</span> Goals of System</a></li>
+                <li><a href="#introduction-1"><span class="toc-section-number">3.1</span> Introduction</a></li>
                 <li><a href="#architecture"><span class="toc-section-number">3.2</span> Architecture</a></li>
                 <li><a href="#implementation"><span class="toc-section-number">3.3</span> Implementation</a></li>
                 </ul></li>
@@ -184,7 +185,7 @@
                 <li><a href="#places-for-future-research"><span class="toc-section-number">6.2</span> Places for Future Research</a></li>
                 <li><a href="#implementation-differences-in-future-version"><span class="toc-section-number">6.3</span> Implementation Differences in future version</a></li>
                 </ul></li>
-                <li><a href="#conclusion-1"><span class="toc-section-number">7</span> Conclusion</a></li>
+                <li><a href="#conclusion"><span class="toc-section-number">7</span> Conclusion</a></li>
                 <li><a href="#appendix-1-some-extra-stuff">Appendix 1: Some extra stuff</a></li>
                 <li><a href="#appendix-2-some-extra-stuff">Appendix 2: Some extra stuff</a></li>
                 <li><a href="#references">References</a></li>
@@ -227,32 +228,12 @@ and add the centred logo
 <!-- Use the \newpage command to force a new page -->
 
 <p></p>
-<h1 id="introduction-with-a-citation"><span class="header-section-number">1</span> Introduction, with a citation</h1>
-<h2 id="background"><span class="header-section-number">1.1</span> Background</h2>
-<p>This is the introduction. Quisque finibus aliquet cursus. Integer in pellentesque tellus. Duis eu dignissim nulla, a porttitor enim. Quisque vehicula leo non ultrices finibus. Duis vehicula quis sem sit amet sollicitudin. Integer neque est, pharetra et auctor vel, iaculis interdum lectus.</p>
+<h1 id="introduction"><span class="header-section-number">1</span> Introduction</h1>
+<!-- ## Background -->
+<p>Explain how I reimplemented a research paper into a real world web application and then tested it.</p>
 <!-- 
-To include a reference, add the citation key shown in the references.bib file.
--->
-<p>To include a citation to the text, just add the citation key shown in the references.bib file. The style of the citation is determined by the ref_format.csl file. For example, in The Living Sea you can find pictures of the Calypso <span class="citation">(<span class="citeproc-not-found" data-reference-id="Cousteau1963"><strong>???</strong></span>)</span>.</p>
-<p>In neque mauris, maximus at sapien a, iaculis dignissim justo. Aliquam erat volutpat. Praesent varius risus auctor est ultricies, sit amet consequat nisi laoreet. Suspendisse non est et mauris pharetra sagittis non porta justo. Praesent malesuada metus ut sapien sodales ornare.</p>
-<!-- ## The middle bit
-
-This is the middle bit. Phasellus quis ex in ipsum pellentesque lobortis tincidunt sed massa. Nullam euismod sem quis dictum condimentum. Suspendisse risus metus, elementum eu congue quis, viverra ac metus. Donec non lectus at lectus euismod laoreet pharetra semper dui. Donec sed eleifend erat, vel ultrices nibh. Nam scelerisque turpis ac nunc mollis, et rutrum nisl luctus.
-
-Duis faucibus vestibulum elit, sit amet lobortis libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed at cursus nibh. Sed accumsan imperdiet interdum. Proin id facilisis tortor. Proin posuere a neque nec iaculis. Suspendisse potenti. Nullam hendrerit ante mi, vitae iaculis dui laoreet eu.
-
-Cras eleifend velit diam, eu viverra mi volutpat ut. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec finibus leo nec dui imperdiet, tincidunt ornare orci venenatis. Maecenas placerat efficitur est, eu blandit magna hendrerit eu.
-
-### Subsection of the middle bit
-
-This is a subsection of the middle bit. Quisque sit amet tempus arcu, ac suscipit ante. Cras massa elit, pellentesque eget nisl ut, malesuada rutrum risus. Nunc in venenatis mi. Curabitur sit amet suscipit eros, non tincidunt nibh. Phasellus lorem lectus, iaculis non luctus eget, tempus non risus. Suspendisse ut felis mi.
-
-## Summary of chapters
-
-<!-- 
-For italic, add one * on either side of the text
-For bold, add two * on either side of the text
-For bold and italic, add _** on either side of the text
+To include a reference, add the citation key shown in the references.bib file. 
+[@Cousteau1963].
 -->
 <p>This is a brief outline of what went into each chapter. <strong>Chapter 1</strong> gives a background on duis tempus justo quis arcu consectetur sollicitudin. <strong>Chapter 2</strong> discusses morbi sollicitudin gravida tellus in maximus. <strong>Chapter 3</strong> discusses vestibulum eleifend turpis id turpis sollicitudin aliquet. <strong>Chapter 4</strong> shows how phasellus gravida non ex id aliquet. Proin faucibus nibh sit amet augue blandit varius. --&gt;</p>
 <h1 id="literature-review-with-maths"><span class="header-section-number">2</span> Literature review, with maths</h1>
@@ -261,32 +242,40 @@ After the introductory chapter, it seems fairly common to
 include a chapter that reviews the literature and 
 introduces methodology used throughout the thesis.
 -->
-<h2 id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
-<p>This is the introduction. Duis in neque felis. In hac habitasse platea dictumst. Cras eget rutrum elit. Pellentesque tristique venenatis pellentesque. Cras eu dignissim quam, vel sodales felis. Vestibulum efficitur justo a nibh cursus eleifend. Integer ultrices lorem at nunc efficitur lobortis.</p>
-<h2 id="the-middle"><span class="header-section-number">2.2</span> The middle</h2>
-<p>This is the literature review. Nullam quam odio, volutpat ac ornare quis, vestibulum nec nulla. Aenean nec dapibus neque. Mathematical formula can be inserted using Latex:</p>
+<h2 id="traditional-dosing"><span class="header-section-number">2.1</span> Traditional Dosing</h2>
+<p>Explain what heparin is, how heparin is traditional prescribed.<br />
+reference dosage guidelines which are in the appendix.</p>
+<h2 id="high-level"><span class="header-section-number">2.2</span> High Level</h2>
+<p>At a high level explain what we want to do - remove doctors manual process/guessing heuristics.<br />
+we want to predict the amount of heparin needed to get a therapeutic aptt. explain aptt is our marker for success. explain that there is a lot of data that can be used for predictions - explain how they selected their features.</p>
+<h2 id="prediction"><span class="header-section-number">2.3</span> Prediction</h2>
+<p>explain different techniques that could be used (svm, logistic regression, others listed in their paper)<br />
+then explain that mohammad et al chose to use logistic regression because it had a natural relationship with this...</p>
+<h3 id="logistic-regression"><span class="header-section-number">2.3.1</span> Logistic Regression</h3>
+<p>explain what logistic regression is and how they used the multiparameter model.<br />
+explain how they choose features for the model.<br />
+explain equation 1.</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline"><em>f</em>(<em>x</em>)=<em>a</em><em>x</em><sup>3</sup> + <em>b</em><em>x</em><sup>2</sup> + <em>c</em><em>x</em> + <em>d</em></span></li>
+<li><span class="math inline"><em>P</em>(<em>t</em><em>h</em><em>e</em><em>r</em><em>a</em>)=<em>P</em>(<em>s</em><em>u</em><em>b</em>)+<em>P</em>(<em>s</em><em>u</em><em>p</em><em>r</em><em>a</em>)</span></li>
 </ol>
-<p>Nunc eleifend (1), ex a luctus porttitor, felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.</p>
-<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed faucibus pulvinar volutpat. Ut semper fringilla erat non dapibus. Nunc vitae felis eget purus placerat finibus laoreet ut nibh.</p>
-<h2 id="conclusion"><span class="header-section-number">2.3</span> Conclusion</h2>
-<p>This is the conclusion. Donec pulvinar molestie urna eu faucibus. In tristique ut neque vel eleifend. Morbi ut massa vitae diam gravida iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+<h2 id="summary-of-their-results"><span class="header-section-number">2.4</span> Summary of their results</h2>
+<p>Summary of the results from their paper. It is better than weight based system alone.<br />
+They weren't able to test if it was better than an actual doctor because you'd need to have the system in place to do that. That is where this system/survey comes into play.</p>
 <!-- Insert an unordered list -->
-<ul>
-<li>first item in the list</li>
-<li>second item in the list</li>
-<li>third item in the list</li>
-</ul>
+<!-- - first item in the list
+- second item in the list
+- third item in the list
+
+ -->
 <h1 id="system-explanation"><span class="header-section-number">3</span> System Explanation</h1>
 <!--
 After the introductory chapter, it seems fairly common to 
 include a chapter that reviews the literature and 
 introduces methodology used throughout the thesis.
 -->
-<h2 id="goals-of-system"><span class="header-section-number">3.1</span> Goals of System</h2>
-<p>goals here....<br />
-talk about user experience/ui design.</p>
+<h2 id="introduction-1"><span class="header-section-number">3.1</span> Introduction</h2>
+<p>explain what it is - a standalone calculator, to familiar doctors with the technique. Goals of System<br />
+- mobile ready... talk about user experience/ui design.</p>
 <h2 id="architecture"><span class="header-section-number">3.2</span> Architecture</h2>
 <p>architecture here... include a figure.F igure  shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 <div class="figure">
@@ -345,7 +334,7 @@ lack of data</p>
 <li>better analytics</li>
 </ul>
 <!-- blank lines at end -necessary for template -->
-<h1 id="conclusion-1"><span class="header-section-number">7</span> Conclusion</h1>
+<h1 id="conclusion"><span class="header-section-number">7</span> Conclusion</h1>
 <!--
 After the introductory chapter, it seems fairly common to 
 include a chapter that reviews the literature and 
@@ -363,6 +352,54 @@ This could be a list of papers by the author for example
 <li>link to source code git repos</li>
 <li>screenshots and links to alternative design for testing aPTT over time</li>
 <li>links to data sources/notebook of documentation</li>
+<li>extended results from survey.<br />
+.. tables with stats like ave, std deviation etc for each patient 1-10 ..-</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>First ordered list item</li>
+<li>Another item<br />
+Unordered sub-list.</li>
+<li>Actual numbers don't matter, just that it's a number --1. Ordered sub-list<br />
+--1. Ordered sub-list --1. Ordered sub-list<br />
+</li>
+<li><p>And another item.</p></li>
+<li>first item in the list</li>
+<li>second item in the list</li>
+</ol>
+<ul>
+<li>subitem</li>
+<li>subitem</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>third item in the list</li>
+</ol>
+<ul>
+<li>an entry</li>
+<li>another entry<br />
+</li>
+<li>some sub entry without leading bullet</li>
+<li><ul>
+<li>some sub entry with leading bullet</li>
+</ul></li>
+<li>another entry for another entry</li>
+<li><ul>
+<li>blablabla</li>
+</ul></li>
+<li><ul>
+<li>blublublu</li>
+</ul></li>
+<li><ul>
+<li><ul>
+<li>dfdf</li>
+</ul></li>
+</ul></li>
+<li><ul>
+<li><ul>
+<li><ul>
+<li>also some way</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 <h1 id="appendix-2-some-extra-stuff" class="unnumbered">Appendix 2: Some extra stuff</h1>
 <p>This could be a list of papers by the author for example Also tutorials/people/stack overflow that was helpful. tom's markdown -&gt; latex</p>

@@ -6,9 +6,11 @@ include a chapter that reviews the literature and
 introduces methodology used throughout the thesis.
 -->
 
-## Goals of System
+## Introduction
 
-goals here....  
+explain what it is - a standalone calculator, to familiar doctors with the technique. 
+Goals of System  
+- mobile ready... 
 talk about user experience/ui design.
 
 ## Architecture 

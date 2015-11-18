@@ -6,27 +6,39 @@ include a chapter that reviews the literature and
 introduces methodology used throughout the thesis.
 -->
 
-## Introduction
+## Traditional Dosing
 
-This is the introduction. Duis in neque felis. In hac habitasse platea dictumst. Cras eget rutrum elit. Pellentesque tristique venenatis pellentesque. Cras eu dignissim quam, vel sodales felis. Vestibulum efficitur justo a nibh cursus eleifend. Integer ultrices lorem at nunc efficitur lobortis.
+Explain what heparin is, how heparin is traditional prescribed.  
+reference dosage guidelines which are in the appendix. 
 
-## The middle
+## High Level
 
-This is the literature review. Nullam quam odio, volutpat ac ornare quis, vestibulum nec nulla. Aenean nec dapibus neque. Mathematical formula can be inserted using Latex:
+At a high level explain what we want to do - remove doctors manual process/guessing heuristics.  
+we want to predict the amount of heparin needed to get a therapeutic aptt. explain aptt is our marker for success. explain that there is a lot of data that can be used for predictions - explain how they selected their features.  
 
-(@ref_for_eqn1) $f(x) = ax^3 + bx^2 + cx + d$
+## Prediction 
 
-Nunc eleifend (@ref_for_eqn1), ex a luctus porttitor, felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.
+explain different techniques that could be used (svm, logistic regression, others listed in their paper)  
+then explain that mohammad et al chose to use logistic regression because it had a natural relationship with this...  
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed faucibus pulvinar volutpat. Ut semper fringilla erat non dapibus. Nunc vitae felis eget purus placerat finibus laoreet ut nibh.
+### Logistic Regression 
 
-## Conclusion
+explain what logistic regression is and how they used the multiparameter model.  
+explain how they choose features for the model.  
+explain equation 1.
 
-This is the conclusion. Donec pulvinar molestie urna eu faucibus. In tristique ut neque vel eleifend. Morbi ut massa vitae diam gravida iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+(@ref_for_eqn1) $P(thera) = P(sub) + P(supra)$
+
+## Summary of their results 
+
+Summary of the results from their paper.  It is better than weight based system alone.  
+They weren't able to test if it was better than an actual doctor because you'd need to have the system in place to do that. That is where this system/survey comes into play.  
 
 <!-- Insert an unordered list -->
 
-- first item in the list
+<!-- - first item in the list
 - second item in the list
 - third item in the list
+
+ -->
 
