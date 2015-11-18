@@ -21,12 +21,12 @@ env.csl_file = env.style_dir + "\\ref_format.csl"
 def pdf():
     """ Generate a PDF file """
     env.file_ext = ".pdf"
-    local("pandoc {input_files} -o {output_file}{file_ext} -H {preamble_file} --template {template_file} --bibliography={bib_file} --csl={csl_file} -V fontsize=12pt -V papersize=a4paper -V documentclass:report -N --latex-engine=xelatex".format(**env))
+    local("pandoc {input_files} -o {output_file}{file_ext} -H {preamble_file} --template {template_file} --bibliography={bib_file} --csl={csl_file} -V fontsize=12pt -V documentclass:report -N --latex-engine=xelatex".format(**env))
 
 def tex():
     """ Generate a tex file """
     env.file_ext = ".tex"
-    local("pandoc {input_files} -o {output_file}{file_ext} -H {preamble_file} --template {template_file} --bibliography={bib_file} --csl={csl_file} -V fontsize=12pt -V papersize=a4paper -V documentclass:report -N --latex-engine=xelatex".format(**env))
+    local("pandoc {input_files} -o {output_file}{file_ext} -H {preamble_file} --template {template_file} --bibliography={bib_file} --csl={csl_file} -V fontsize=12pt -V documentclass:report -N --latex-engine=xelatex".format(**env))
 
 def html():
     """ Generate a HTML file """
