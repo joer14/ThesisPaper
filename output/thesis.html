@@ -231,6 +231,14 @@ and add the centred logo
 <h1 id="introduction"><span class="header-section-number">1</span> Introduction</h1>
 <!-- ## Background -->
 <p>Explain how I reimplemented a research paper into a real world web application and then tested it.</p>
+<ul>
+<li>keep it relatively high level<br />
+</li>
+<li>current dosing practices</li>
+<li>how retrospective data comes into play, potential improvements it offers. Increasing patient care outcomes. Cost/length of stay outcomes. Could revolutionize the ways in which drug trails occur. Drug trails traditionally use a rather homogeneous group of people, and test them to with doses to see if there are any adverse effects. After we test with the homogeneous group, the guidelines developed are used for patients that do not fit in with the testing cohort, so no guidelines for proper dosing exist for these patients.</li>
+<li>purpose of thesis, demonstrate a potential interface for an actual model that has been peered reviewed gather insights on potential issues with dosing. Also create a sample web application that works for this use case, so that the technique can be more easily generalized to other drugs such as ....????</li>
+<li></li>
+</ul>
 <!-- 
 To include a reference, add the citation key shown in the references.bib file. 
 [@Cousteau1963].
@@ -270,6 +278,24 @@ They weren't able to test if it was better than an actual doctor because you'd n
 - third item in the list
 
  -->
+<p>
+In this study you are asked to determine the appropriate dose of heparin to prescribe to patients admitted to your fictional ICU. Your task is to choose an initial infusion rate of heparin, which will achieve therapeutic PTT as measured in 6 hours time as quickly and accurately as possible. Therapeutic PTT is defined as between 60 and 100 seconds.
+</p>
+<p>
+After you suggest an initial dose of heparin, a statistical model will display showing an estimated infusion rate which is believed to maximize the probability of a therapeutic outcome. The probability of a therapeutic outcome within 6 hours time is relatively rare, only occurring in roughly 30% of the 1,680 cases in the dataset.
+<p>
+Each patient’s chart will summarize their medical history and relevant laboratory data. Additionally, you will be provided your hospital’s heparin dosage guidelines which you can use to inform your decision. After prescribing the initial dose, another patient profile will be presented and this task repeats four more times.
+</p>
+<p>
+If at any point you don’t understand a term, please refer to the glossary, which is always available at the bottom of the page.
+</p>
+<p>
+Now, please read over the heparin dosage guidelines, then click the button begin Test 1.
+</p>
+<p>
+These guidelines will be accessible when you need them later, so there is no need to copy them down.
+</p>
+<pre><code>  &lt;hr&gt;</code></pre>
 <h1 id="system-explanation"><span class="header-section-number">3</span> System Explanation</h1>
 <!--
 After the introductory chapter, it seems fairly common to 
@@ -325,8 +351,12 @@ include a chapter that reviews the literature and
 introduces methodology used throughout the thesis.
 -->
 <h2 id="shortcomings-in-the-survey"><span class="header-section-number">6.1</span> Shortcomings in the Survey</h2>
-<p>errors<br />
-lack of data</p>
+<ul>
+<li>errors<br />
+</li>
+<li>lack of data</li>
+<li>better explanation of how the model/logistic regression works. explain what features are being used in the prediction and what aren't. suggest a potential user interface that gives weights to things e.g. The patients suggested dose deviates from a baseline dose curve due to the patients ethnicity and creatinine and mean SOFA scores.</li>
+</ul>
 <h2 id="places-for-future-research"><span class="header-section-number">6.2</span> Places for Future Research</h2>
 <p>how did the doses differ in part 1 and part 2 of the survey.</p>
 <h2 id="implementation-differences-in-future-version"><span class="header-section-number">6.3</span> Implementation Differences in future version</h2>
