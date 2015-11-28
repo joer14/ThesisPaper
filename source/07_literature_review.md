@@ -25,6 +25,9 @@ then explain that mohammad et al chose to use logistic regression because it had
 
 explain what logistic regression is and how they used the multiparameter model.  
 explain how they choose features for the model.  
+explain assumption of proportional odds-  
+> Ordinal logistic regression is a special form of multinomial logistic regression which is commonly used to model categorical outcomes with some meaningful order. Besides the assumption that outcomes can be ordered in a meaningful way, ordinal regression also makes the assumption of proportional odds. This assumption leads to regression coefficients that are maintained across classes, with only the intercept terms of the models changing. That is, it assumes that explanatory features maintain identical effects across varying ranges of the outcome. seem that modeling therapeutic aPTT categories would lend itself nicely to this kind of approach. However, we did not feel that the assumption of proportional odds was a valid one. Specifically, the constant nature of the regression coefficients enforces zero skew on the P(therapeutic) function, and  thereby limits the flexibility of the approach.  
+thereby limits the flexibility of the approach.
 explain equation 1.
 
 (@ref_for_eqn1) $P(thera) = P(sub) + P(supra)$
