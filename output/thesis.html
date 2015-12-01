@@ -148,21 +148,21 @@
                 <!--
                 -->
         <div id="title-page">
-            <h1>Heparin Paper title</h1>
-            <h2>Joseph Rowley</h2>
+            <h1>Statistical Drug Dosing: A User Study on Heparin Dosing</h1>
+            <h2>Joe Rowley</h2>
         </div>
                     <div id="TOC">
                 <ul>
                 <li><a href="#abstract">Abstract</a></li>
                 <li><a href="#acknowledgements">Acknowledgements</a></li>
                 <li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
-                <li><a href="#literature-review"><span class="toc-section-number">2</span> Literature Review</a><ul>
-                <li><a href="#traditional-dosing"><span class="toc-section-number">2.1</span> Traditional Dosing</a></li>
-                <li><a href="#high-level"><span class="toc-section-number">2.2</span> High Level</a></li>
-                <li><a href="#prediction"><span class="toc-section-number">2.3</span> Prediction</a><ul>
-                <li><a href="#logistic-regression"><span class="toc-section-number">2.3.1</span> Logistic Regression</a></li>
+                <li><a href="#background"><span class="toc-section-number">2</span> Background</a><ul>
+                <li><a href="#traditional-dosing-of-heparin"><span class="toc-section-number">2.1</span> Traditional Dosing of Heparin</a></li>
+                <li><a href="#predicting-therapeutic-outcome"><span class="toc-section-number">2.2</span> Predicting Therapeutic Outcome</a><ul>
+                <li><a href="#logistic-regression-approach"><span class="toc-section-number">2.2.1</span> Logistic Regression Approach</a></li>
+                <li><a href="#feature-selection"><span class="toc-section-number">2.2.2</span> Feature Selection</a></li>
                 </ul></li>
-                <li><a href="#summary-of-their-results"><span class="toc-section-number">2.4</span> Summary of their results</a></li>
+                <li><a href="#summary-of-their-resultsfindings"><span class="toc-section-number">2.3</span> Summary of their results/findings</a></li>
                 </ul></li>
                 <li><a href="#system-explanation"><span class="toc-section-number">3</span> System Explanation</a><ul>
                 <li><a href="#introduction-1"><span class="toc-section-number">3.1</span> Introduction</a></li>
@@ -206,9 +206,10 @@ and add the centred logo
 <!-- \vspace*{\fill} -->
 <h1 id="abstract" class="unnumbered">Abstract</h1>
 <!-- This is the abstract -->
-<p>Insert Abstract Here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et turpis gravida, lacinia ante sit amet, sollicitudin erat. Aliquam efficitur vehicula leo sed condimentum. Phasellus lobortis eros vitae rutrum egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at urna imperdiet, vulputate orci eu, sollicitudin leo. Donec nec dui sagittis, malesuada erat eget, vulputate tellus. Nam ullamcorper efficitur iaculis. Mauris eu vehicula nibh. In lectus turpis, tempor at felis a, egestas fermentum massa.</p>
+<p>The intention of this study was to determine the feasibility of using statistical drug dosing tools in a mock clinical setting. We wanted to learn about both the technical implementation and user experience challenges involved with creating and using computer aided dosing tools. First a web application was developed using existing models for dosing heparin in ICU patients. This application was next developed into an interactive user survey. We found that Doctors were generally more confidant and faster when dosing using the tools. [[add other results here too. It's good to avoid numbers in abstracts from what I recall]] In closing we recommend some best practices for future development of statistical drug dosing tools.</p>
 <h1 id="acknowledgements" class="unnumbered">Acknowledgements</h1>
 <!-- This is for acknowledging all of the people who helped out -->
+<!-- add something about thanking the people taking the study  -->
 <p>The models used in this tool were introduced Mohammad M. Ghassemi, Stefan E. Richter, Ifeoma M. Eche, Tszyi W. Chen, John Danziger, and Leo A. Celi in their paper A data-driven approach to optimized medication dosing: a focus on heparin <!-- [@ghassemi2014data] -->. This project would not have been possible without Mohammad’s support.</p>
 <p>Additionally, data used in these models was sourced from the MIMIC-II and MIMIC-III (<span class="citation">Saeed et al. (2011)</span>) medical databases, a project supported by the MIT Lab for Computational Physiology.</p>
 <p>Furthermore, I have many advisors who helped me with this project:</p>
@@ -216,13 +217,12 @@ and add the centred logo
 <li>Mohammad M. Ghassemi</li>
 <li><a href="https://users.soe.ucsc.edu/~srikur/">Sri Kurniawan</a></li>
 <li><a href="https://users.soe.ucsc.edu/~mrg/">Matthew Guthaus</a></li>
-<li><a href="https://connects.catalyst.harvard.edu/profiles/display/person/58103">Leo Celi</a></li>
 </ul>
 <p>Additionally the following people were very influential in preparing me for this project:</p>
 <ul>
 <li><a href="https://users.soe.ucsc.edu/~davis/">James Davis</a></li>
 <li><a href="https://users.soe.ucsc.edu/~kolaitis/">Phokion Kolaitis</a></li>
-<li><a href="http://www.pamf.org/dr-philip-strong.html">Philip Strong</a></li>
+<li><a href="http://www.pamf.org/dr-philip-strong.html">Philip Strong</a> <!-- - [Leo Celi](https://connects.catalyst.harvard.edu/profiles/display/person/58103)  --> <!-- maybe add Kenneth Paik / Sana --></li>
 </ul>
 <p>Finally, this project would not have been possible without the unwavering moral and technical support of my parents <a href="http://www.uwhealth.org/findadoctor/profile/howard-a-rowley-md/7329">Howard Rowley</a> and <a href="http://www.uwhealth.org/findadoctor/profile/carol-a-diamond-md/5867">Carol Diamond</a>.</p>
 <!-- Use the \newpage command to force a new page -->
@@ -230,72 +230,75 @@ and add the centred logo
 <p></p>
 <h1 id="introduction"><span class="header-section-number">1</span> Introduction</h1>
 <!-- ## Background -->
-<p>Explain how I reimplemented a research paper into a real world web application and then tested it.</p>
-<ul>
-<li>keep it relatively high level<br />
-</li>
-<li>current dosing practices</li>
-<li>how retrospective data comes into play, potential improvements it offers. Increasing patient care outcomes. Cost/length of stay outcomes. Could revolutionize the ways in which drug trails occur. Drug trails traditionally use a rather homogeneous group of people, and test them to with doses to see if there are any adverse effects. After we test with the homogeneous group, the guidelines developed are used for patients that do not fit in with the testing cohort, so no guidelines for proper dosing exist for these patients.</li>
-<li>purpose of thesis, demonstrate a potential interface for an actual model that has been peered reviewed gather insights on potential issues with dosing. Also create a sample web application that works for this use case, so that the technique can be more easily generalized to other drugs such as ....????</li>
-<li></li>
-</ul>
+<!-- 
+Explain how I reimplemented a research paper into a real world web application and then tested it. 
+
+- keep it relatively high level  
+- current dosing practices 
+- how retrospective data comes into play, potential improvements it offers. Increasing patient care outcomes. Cost/length of stay outcomes. Could revolutionize the ways in which drug trails occur. Drug trails traditionally use a rather homogeneous group of people, and test them to with doses to see if there are any adverse effects. After we test with the homogeneous group, the guidelines developed are used for patients that do not fit in with the testing cohort, so no guidelines for proper dosing exist for these patients. 
+- purpose of thesis, demonstrate a potential interface for an actual model that has been peered reviewed gather insights on potential issues with dosing. Also create a sample web application that works for this use case, so that the technique can be more easily generalized to other drugs such as ....???? 
+- 
+The intention of this study was to determine the feasibility of using statistical drug dosing tools in a mock clinical setting. We wanted to learn about both the technical implementation and user experience challenges involved with creating and using computer aided dosing tools. First a web application was developed using existing models for dosing heparin in ICU patients. This application was next developed into an interactive user survey. We found that Doctors were generally more confidant and faster when dosing using the tools. [[add other results here too. It's good to avoid numbers in abstracts from what I recall]] In closing we recommend some best practices for future development of statistical drug dosing tools.
+
+ -->
+<!-- 
+
+intro
+talk about what I did
+-- implemented exisiting tool
+-- implemented a survey
+-- collected responses
+
+
+
+
+ -->
+<p>The primary goal of this study was to determine the technical implementation challenges and user experience challenges involved with a statistical dosing tool. Specifically, we implemented a heparin dosing tool that was first introduced in the paper <em>A data-driven approach to optimized medication dosing: a focus on heparin</em> <span class="citation">(Ghassemi et al. 2014)</span>. In the paper a statistical model is generated for predicting an optimal infusion rate for heparin for patients in intensive care units (ICUs). In this study, we reimplemented their existing models into an interactive web application, which allows the user to generate dosage guidelines based on a patient's features. Next a user study application was created, which presents the doctors with a patient case. The doctor initially provides their own suggestion for the infusion rate and is then presented with the model's prediction for an optimal infusion rate. After the doctor views the model, they have the opportunity to adjust their initial dose and provide a reasoning for their dose adjustments. Their interaction with the tool yields many metrics, including number of dose adjustments, speed of dosing, number of times guidelines were viewed. <!-- Their final multiple feature model improved outcome classification over a weight-only with a volume under the surface (VUS) of 0.48 vs. 0.42. --></p>
+<!-- Statistical dosing tools offer an alternative to traditional dosing methodologies, which by nature cannot be tuned to a specific patient's every condition every time. Additionally, traditional dosing often is backed by heuristics, knowledge accumulated overtime by more experienced doctors. This knowledge is not peer reviewed and cannot be easily transfered to other new doctors. The promise of statistical dosing is that it   -->
 <!-- 
 To include a reference, add the citation key shown in the references.bib file. 
 [@Cousteau1963].
 -->
 <!-- 
 This is a brief outline of what went into each chapter. **Chapter 1** gives a background on duis tempus justo quis arcu consectetur sollicitudin.  **Chapter 2** discusses morbi sollicitudin gravida tellus in maximus.  **Chapter 3** discusses vestibulum eleifend turpis id turpis sollicitudin aliquet.  **Chapter 4** shows how phasellus gravida non ex id aliquet. Proin faucibus nibh sit amet augue blandit varius. -->
-<h1 id="literature-review"><span class="header-section-number">2</span> Literature Review</h1>
+<h1 id="background"><span class="header-section-number">2</span> Background</h1>
+<h2 id="traditional-dosing-of-heparin"><span class="header-section-number">2.1</span> Traditional Dosing of Heparin</h2>
+<p>Heparin is an anticoagulant medication administered intravenously to patients with blood clots. Specifically it is often used for strokes, pulmonary embolism (blockage in an artery in the lung), acute coronary syndrome (e.g. heart attack), and many other conditions. The general protocol for dosing heparin is to initially order baseline lab results for the patient. These values combined with context of the patients condition allow a doctor to determine the infusion rate and if a bolus (a single large initial dose) is required. The primary metric used for monitoring patient progress is activated partial thromboplastin time (APTT). After the infusion is started the patient is monitored and the dose is adjust periodically. Most often new labs are ordered every 6 hours [citation to UW and Beth Israel].</p>
 <!--
 After the introductory chapter, it seems fairly common to 
 include a chapter that reviews the literature and 
 introduces methodology used throughout the thesis.
 -->
-<h2 id="traditional-dosing"><span class="header-section-number">2.1</span> Traditional Dosing</h2>
-<p>Explain what heparin is, how heparin is traditional prescribed.<br />
-reference dosage guidelines which are in the appendix.</p>
-<h2 id="high-level"><span class="header-section-number">2.2</span> High Level</h2>
-<p>At a high level explain what we want to do - remove doctors manual process/guessing heuristics.<br />
-we want to predict the amount of heparin needed to get a therapeutic aptt. explain aptt is our marker for success. explain that there is a lot of data that can be used for predictions - explain how they selected their features.</p>
-<h2 id="prediction"><span class="header-section-number">2.3</span> Prediction</h2>
-<p>explain different techniques that could be used (svm, logistic regression, others listed in their paper)<br />
-then explain that mohammad et al chose to use logistic regression because it had a natural relationship with this...</p>
-<h3 id="logistic-regression"><span class="header-section-number">2.3.1</span> Logistic Regression</h3>
-<p>explain what logistic regression is and how they used the multiparameter model.<br />
-explain how they choose features for the model.<br />
-explain assumption of proportional odds-<br />
-&gt; Ordinal logistic regression is a special form of multinomial logistic regression which is commonly used to model categorical outcomes with some meaningful order. Besides the assumption that outcomes can be ordered in a meaningful way, ordinal regression also makes the assumption of proportional odds. This assumption leads to regression coefficients that are maintained across classes, with only the intercept terms of the models changing. That is, it assumes that explanatory features maintain identical effects across varying ranges of the outcome. seem that modeling therapeutic aPTT categories would lend itself nicely to this kind of approach. However, we did not feel that the assumption of proportional odds was a valid one. Specifically, the constant nature of the regression coefficients enforces zero skew on the P(therapeutic) function, and thereby limits the flexibility of the approach.<br />
-thereby limits the flexibility of the approach. explain equation 1.</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline"><em>P</em>(<em>t</em><em>h</em><em>e</em><em>r</em><em>a</em>)=<em>P</em>(<em>s</em><em>u</em><em>b</em>)+<em>P</em>(<em>s</em><em>u</em><em>p</em><em>r</em><em>a</em>)</span></li>
-</ol>
-<h2 id="summary-of-their-results"><span class="header-section-number">2.4</span> Summary of their results</h2>
-<p>Summary of the results from their paper. It is better than weight based system alone.<br />
-They weren't able to test if it was better than an actual doctor because you'd need to have the system in place to do that. That is where this system/survey comes into play.</p>
+<!-- Explain what heparin is, how heparin is traditional prescribed.   -->
+<!-- reference dosage guidelines which are in the appendix.  -->
+<!-- ## High Level -->
+<!-- At a high level explain what we want to do - remove doctors manual process/guessing heuristics.   -->
+<!-- we want to predict the amount of heparin needed to get a therapeutic aptt. explain aptt is our marker for success. explain that there is a lot of data that can be used for predictions - explain how they selected their features.   -->
+<h2 id="predicting-therapeutic-outcome"><span class="header-section-number">2.2</span> Predicting Therapeutic Outcome</h2>
+<p>The objective of the dosing tool is determine an ideal initial infusion rate, such that patient has the highest probability of reaching a therapeutic state in 6 hours time. A therapeutic state is defined as an APTT value of between 60 seconds and 100 second. To predict an optimal dose Ghassemi et al. employed the use of multi-variant logistic regression.</p>
+<h3 id="logistic-regression-approach"><span class="header-section-number">2.2.1</span> Logistic Regression Approach</h3>
+<!-- Logistic regression  -->
+<p>The objective of the model was to determine the probability that patient would end in one of three categories: sub-therapeutic, therapeutic, or supra-therapeutic. A patient can by definition only be in one category at a time. This lead Ghassemi et al. to the following equation:<br />
+(1) <span class="math inline">1 = <em>P</em>(<em>s</em><em>u</em><em>b</em> − <em>t</em><em>h</em><em>e</em><em>r</em><em>a</em><em>p</em><em>e</em><em>u</em><em>t</em><em>i</em><em>c</em>)+<em>P</em>(<em>t</em><em>h</em><em>e</em><em>r</em><em>a</em><em>p</em><em>e</em><em>u</em><em>t</em><em>i</em><em>c</em>)+<em>P</em>(<em>s</em><em>u</em><em>p</em><em>r</em><em>a</em> − <em>t</em><em>h</em><em>e</em><em>r</em><em>a</em><em>p</em><em>e</em><em>u</em><em>t</em><em>i</em><em>c</em>)</span></p>
+<p>The challenge of using logistic regression to predict therapeutic outcomes is that the probability of a therapeutic outcome is not a strictly monotonic function. So using logistic regression directly to predict P(therapeutic) will not work. That being said, the probability of sub-therapeutic and supra-therapeutic outcomes are monotonically decreasing and increasing functions respectively. Given these properties, we can use multinomial logistic regression to determine functions for sub-therapeutic and supra-therapeutic aPTT. Using equation 1 we can then determine the probability of a therapeutic outcome.<br />
+Although at this point a case been has made that multinomial logistic regression may be an appropriate tool, there are a few considerations the Ghassemi et al. took with regards to the form of regression. There are many forms of multinomial logistic regression with subtle but important differences. There is a natural order to the classifications (sub-therapeutic, therapeutic, supra-therapeutic), so ordinal logistic regression could be considered. The challenge with ordinal logistic regression, however, is that it makes the assumption of proportional odds, so regression intercept terms vary across classes while regression coefficients are shared across classes. In the words of the original authors <em>&quot;it assumes that explanatory features maintain identical effects across varying ranges of the outcome&quot;</em>[citation appendix]. Instead the ordinal regression they instead used a modified version of standard multinomial logistic regression, which utilized a flexible reference category. That is instead of using a single class to predict the outcome that is not being modeled, they used all classes. So when modeling supra-therapeutic aPTT, standard multinomial logistic regression would reference either therapeutic or sub-therapeutic aPTT classes, while their approach referenced both classes. This choice was demonstrated to have significant effects on the validity of their models [citation to appendix, section 2].</p>
+<!-- To predict the probability of a therapeutic outcome  -->
+<!-- explain different techniques that could be used (svm, logistic regression, others listed in their paper)   -->
+<!-- then explain that mohammad et al chose to use logistic regression because it had a natural relationship with this...   -->
+<!-- explain what logistic regression is and how they used the multiparameter model.   -->
+<!-- explain how they choose features for the model.   -->
+<!-- explain assumption of proportional odds-   -->
+<h3 id="feature-selection"><span class="header-section-number">2.2.2</span> Feature Selection</h3>
+<p>There are innumerable potential features one could consider as predictors of patient outcome. In their paper, Ghassemi et al. determined the salient features as follows: age, SOFA score, Elixhauser, Heparin dose, Measurement time, Creatinine, Ethnicity, Gender, ICU type, presence of pulmonary embolism, obesity, presence of end stage renal failure.</p>
+<h2 id="summary-of-their-resultsfindings"><span class="header-section-number">2.3</span> Summary of their results/findings</h2>
+<!-- Summary of the results from their paper.  It is better than weight based system alone.   -->
+<!-- They weren't able to test if it was better than an actual doctor because you'd need to have the system in place to do that. That is where this system/survey comes into play.   -->
 <!-- Insert an unordered list -->
 <!-- - first item in the list
 - second item in the list
 - third item in the list
 
  -->
-<p>
-In this study you are asked to determine the appropriate dose of heparin to prescribe to patients admitted to your fictional ICU. Your task is to choose an initial infusion rate of heparin, which will achieve therapeutic PTT as measured in 6 hours time as quickly and accurately as possible. Therapeutic PTT is defined as between 60 and 100 seconds.
-</p>
-<p>
-After you suggest an initial dose of heparin, a statistical model will display showing an estimated infusion rate which is believed to maximize the probability of a therapeutic outcome. The probability of a therapeutic outcome within 6 hours time is relatively rare, only occurring in roughly 30% of the 1,680 cases in the dataset.
-<p>
-Each patient’s chart will summarize their medical history and relevant laboratory data. Additionally, you will be provided your hospital’s heparin dosage guidelines which you can use to inform your decision. After prescribing the initial dose, another patient profile will be presented and this task repeats four more times.
-</p>
-<p>
-If at any point you don’t understand a term, please refer to the glossary, which is always available at the bottom of the page.
-</p>
-<p>
-Now, please read over the heparin dosage guidelines, then click the button begin Test 1.
-</p>
-<p>
-These guidelines will be accessible when you need them later, so there is no need to copy them down.
-</p>
-<pre><code>  &lt;hr&gt;</code></pre>
 <h1 id="system-explanation"><span class="header-section-number">3</span> System Explanation</h1>
 <!--
 After the introductory chapter, it seems fairly common to 
@@ -445,6 +448,9 @@ References are automatically generated from the BibTex file (References.bib)
 -->
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
+<div id="ref-ghassemi2014data">
+<p>Ghassemi, M.M. et al., 2014. A data-driven approach to optimized medication dosing: A focus on heparin. <em>Intensive care medicine</em>, 40(9), pp.1332–1339.</p>
+</div>
 <div id="ref-MIMICII">
 <p>Saeed, M. et al., 2011. Multiparameter intelligent monitoring in intensive care iI (mIMIC-iI): A public-access intensive care unit database. <em>Critical Care Medicine</em>, 39, pp.952–960.</p>
 </div>

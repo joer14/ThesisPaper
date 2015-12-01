@@ -14,7 +14,7 @@ and add the centred logo
         \vspace*{2.5cm}
         
         \huge
-        Heparin Thesis
+        Statistical Drug Dosing: A User Study on Heparin Dosing
         
         \vspace{1.5cm}
         
