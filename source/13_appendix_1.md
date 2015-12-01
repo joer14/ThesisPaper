@@ -11,7 +11,7 @@ This could be a list of papers by the author for example
 - extended results from survey.  
 .. tables with stats like ave, std deviation etc for each patient 1-10
 ..- 
-
+<!-- 
 1. First ordered list item
 2. Another item  
 Unordered sub-list. 
@@ -35,6 +35,6 @@ Unordered sub-list.
  - - blablabla
  - - blublublu
  - - - dfdf
-- - - - also some way 
+- - - - also some way  -->
 \newpage
 
