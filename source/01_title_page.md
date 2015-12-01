@@ -14,7 +14,7 @@ and add the centred logo
         \vspace*{2.5cm}
         
         \huge
-        Statistical Drug Dosing: A User Study on Heparin Dosing
+        A User Study on Data-Driven Dosage of Heparin 
         
         \vspace{1.5cm}
         

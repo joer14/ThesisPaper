@@ -1,13 +1,11 @@
 # Acknowledgements {.unnumbered}
-
 <!-- This is for acknowledging all of the people who helped out -->
-
 <!-- add something about thanking the people taking the study  -->
-The models used in this tool were introduced Mohammad M. Ghassemi, Stefan E. Richter, Ifeoma M. Eche, Tszyi W. Chen, John Danziger, and Leo A. Celi in their paper A data-driven approach to optimized medication dosing: a focus on heparin <!-- [@ghassemi2014data] -->. This project would not have been possible without Mohammad’s support.
+The models used in this tool were introduced Mohammad M. Ghassemi, Stefan E. Richter, Ifeoma M. Eche, Tszyi W. Chen, John Danziger, and Leo A. Celi in their paper *A data-driven approach to optimized medication dosing: a focus on heparin*. This project would not have been possible without Mohammad’s support.
 
 Additionally, data used in these models was sourced from the MIMIC-II and MIMIC-III (@MIMICII) medical databases, a project supported by the MIT Lab for Computational Physiology.
 
-Furthermore, I have many advisors who helped me with this project:
+I also have many advisors who helped me with this project:
 
 - Mohammad M. Ghassemi 
 - [Sri Kurniawan](https://users.soe.ucsc.edu/~srikur/) 

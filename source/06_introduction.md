@@ -1,5 +1,12 @@
 # Introduction
 
+<!-- potential titles:
+
+	Statistical Drug Dosing: A User Study on Heparin Dosing
+	A User Study on Data-Driven Dosage of Heparin 
+        
+
+ -->
 <!-- ## Background -->
 <!-- 
 Explain how I reimplemented a research paper into a real world web application and then tested it. 
