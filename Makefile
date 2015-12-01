@@ -33,7 +33,7 @@ pdf:
 	--csl="$(STYLEDIR)/ref_format.csl" \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
-	-V documentclass:report \
+	-V documentclass:article \
 	-N \
 	--latex-engine=xelatex
 

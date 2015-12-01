@@ -1,13 +1,15 @@
-# System Explanation
+# Calculator Explanation
 
-<!--
-After the introductory chapter, it seems fairly common to 
-include a chapter that reviews the literature and 
-introduces methodology used throughout the thesis.
--->
 
-## Introduction
+<!-- ## Introduction -->
 
+This project is composed of two key components. The first is a "dose calculator" which contains all the needed components to determine the optimal dose for a given patient. The second component is a survey that incorporates the calculator and is used to study how doctors interact with the dosing tool. We will now describe the calculator.
+
+## Functional Requirements 
+The purpose of the calculator is to determine the functions for the probability of sub-therapeutic, therapeutic, supra-therapeutic for a range of infusion amounts for a given patient. This functionality required some key steps:
+1. Access Data and filter it. 
+2. Calculate Static Models
+3. Make a prediction based on a given patient's features.   
 <!-- explain what it is - a standalone calculator, to familiar doctors with the technique.  -->
 <!-- Goals of System   -->
 <!-- - mobile ready...  -->
