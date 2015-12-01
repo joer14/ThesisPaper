@@ -7,25 +7,25 @@ introduces methodology used throughout the thesis.
 -->
 ## Cumulative Results
 
-how many difference people took survey, specialties, time since last dosed heparin. 
+<!-- how many difference people took survey, specialties, time since last dosed heparin.  -->
 
 ## Dose differences
 
-how did the doses differ in part 1 and part 2 of the survey. 
+<!-- how did the doses differ in part 1 and part 2 of the survey.  -->
 
 ## Time differences
 
-time difference in part 1 and part 2.  
-maybe add some graphs here.  
+<!-- time difference in part 1 and part 2.   -->
+<!-- maybe add some graphs here.   -->
 
 ## Understanding/Confidence in Results
 
-....
+<!-- .... -->
 
 ## Other results
 
-things that weren't expected.  
-other things of note  
+<!-- things that weren't expected.   -->
+<!-- other things of note   -->
 
 
 <!-- blank lines at end -necessary for template -->

@@ -162,15 +162,21 @@
                 <li><a href="#logistic-regression-approach"><span class="toc-section-number">2.2.1</span> Logistic Regression Approach</a></li>
                 <li><a href="#feature-selection"><span class="toc-section-number">2.2.2</span> Feature Selection</a></li>
                 </ul></li>
-                <li><a href="#summary-of-their-results"><span class="toc-section-number">2.3</span> Summary of Their Results</a></li>
+                <li><a href="#summary-of-prior-work"><span class="toc-section-number">2.3</span> Summary of Prior Work</a></li>
                 </ul></li>
-                <li><a href="#calculator-explanation"><span class="toc-section-number">3</span> Calculator Explanation</a><ul>
-                <li><a href="#functional-requirements"><span class="toc-section-number">3.1</span> Functional Requirements</a></li>
-                <li><a href="#architecture"><span class="toc-section-number">3.2</span> Architecture</a></li>
-                <li><a href="#implementation"><span class="toc-section-number">3.3</span> Implementation</a></li>
+                <li><a href="#heparin-dosage-calculator"><span class="toc-section-number">3</span> Heparin Dosage Calculator</a><ul>
+                <li><a href="#functional-requirements"><span class="toc-section-number">3.1</span> Functional Requirements</a><ul>
+                <li><a href="#data-processing"><span class="toc-section-number">3.1.1</span> Data Processing</a></li>
+                <li><a href="#model-generation"><span class="toc-section-number">3.1.2</span> Model Generation</a></li>
+                <li><a href="#model-prediction"><span class="toc-section-number">3.1.3</span> Model Prediction</a></li>
                 </ul></li>
-                <li><a href="#survey-explanation"><span class="toc-section-number">4</span> Survey Explanation</a><ul>
-                <li><a href="#goals-of-survey"><span class="toc-section-number">4.1</span> Goals of Survey</a></li>
+                <li><a href="#architecture"><span class="toc-section-number">3.2</span> Architecture</a><ul>
+                <li><a href="#frontend"><span class="toc-section-number">3.2.1</span> Frontend</a></li>
+                <li><a href="#backend"><span class="toc-section-number">3.2.2</span> Backend</a></li>
+                </ul></li>
+                </ul></li>
+                <li><a href="#heparin-survey"><span class="toc-section-number">4</span> Heparin Survey</a><ul>
+                <li><a href="#survey-design"><span class="toc-section-number">4.1</span> Survey Design</a></li>
                 <li><a href="#architecture-and-implementation"><span class="toc-section-number">4.2</span> Architecture and Implementation</a></li>
                 </ul></li>
                 <li><a href="#survey-results"><span class="toc-section-number">5</span> Survey Results</a><ul>
@@ -228,6 +234,7 @@ and add the centred logo
 <!-- Use the \newpage command to force a new page -->
 
 <p></p>
+
 <h1 id="introduction"><span class="header-section-number">1</span> Introduction</h1>
 <!-- potential titles:
 
@@ -299,7 +306,7 @@ Although at this point a case been has made that multinomial logistic regression
 <!-- explain assumption of proportional odds-   -->
 <h3 id="feature-selection"><span class="header-section-number">2.2.2</span> Feature Selection</h3>
 <p>There are innumerable potential features one could consider as predictors of patient outcome. In their paper, Ghassemi et al. determined the salient features as follows: age, SOFA score, Elixhauser, Heparin dose, Measurement time, Creatinine, Ethnicity, Gender, ICU type, presence of pulmonary embolism, obesity, presence of end stage renal failure.</p>
-<h2 id="summary-of-their-results"><span class="header-section-number">2.3</span> Summary of Their Results</h2>
+<h2 id="summary-of-prior-work"><span class="header-section-number">2.3</span> Summary of Prior Work</h2>
 <p>The original paper and associated appendix document the efforts taken to validate the models. To summarize, they partitioned their dataset, dedicating 70% to training and 30% for validation. They then compared the calculated the predicted classification for each patient using both a full featured model and a weight-only model. The full featured model was more accurate than the weight-only approach as measured by Volume Under the Receiver Operating Characteristic Surface (the multiple class version of Area Under Receiver Operating Characteristic Curve), with values of 0.48 vs 0.42 [citation].<br />
 In closing, they noted that a randomized controlled trial would be necessary to determine if this mechanism is more effective for dosing. This thesis project represents the initial steps towards this trial.</p>
 <!-- Summary of the results from their paper.  It is better than weight based system alone.   -->
@@ -310,31 +317,79 @@ In closing, they noted that a randomized controlled trial would be necessary to 
 - third item in the list
 
  -->
-<h1 id="calculator-explanation"><span class="header-section-number">3</span> Calculator Explanation</h1>
+<h1 id="heparin-dosage-calculator"><span class="header-section-number">3</span> Heparin Dosage Calculator</h1>
 <!-- ## Introduction -->
-<p>This project is composed of two key components. The first is a &quot;dose calculator&quot; which contains all the needed components to determine the optimal dose for a given patient. The second component is a survey that incorporates the calculator and is used to study how doctors interact with the dosing tool. We will now describe the calculator.</p>
+<p>This project is composed of two key components. The first is a &quot;dose calculator&quot; which contains all the functionality required to determine the optimal dose for a given patient. The second component is a survey that incorporates the calculator and is used to study how doctors interact with the dosing tool. We now describe the calculator.</p>
+<!-- explain what it is - a standalone calculator, to familiar doctors with the technique.  -->
+<!-- Goals of System   -->
+<!-- - mobile ready...  -->
+<!-- talk about user experience/ui design. -->
 <h2 id="functional-requirements"><span class="header-section-number">3.1</span> Functional Requirements</h2>
-<p>The purpose of the calculator is to determine the functions for the probability of sub-therapeutic, therapeutic, supra-therapeutic for a range of infusion amounts for a given patient. This functionality required some key steps: 1. Access Data and filter it. 2. Calculate Static Models 3. Make a prediction based on a given patient's features.<br />
-<!-- explain what it is - a standalone calculator, to familiar doctors with the technique.  --> <!-- Goals of System   --> <!-- - mobile ready...  --> <!-- talk about user experience/ui design. --></p>
+<p>The purpose of the calculator is to determine the probability functions for sub-therapeutic, therapeutic, supra-therapeutic aPTT for a range of infusion amounts for a given patient. The calculator can be broken into three steps:<br />
+1. Access and refine Dataset<br />
+2. Calculate static models<br />
+3. Make a prediction based on a given patient's features.</p>
+<h3 id="data-processing"><span class="header-section-number">3.1.1</span> Data Processing</h3>
+<p>The data source for the original study was the MIMIC II database [citation]. MIMIC is an open access database consisting of over 40,000 deidentified patient encounters from Beth Israel Deaconess Hospital's ICUs. It is hosted at MIT's Lab for Computational Physiology. The majority of patients in an ICU do not receive heparin, so filtering by medication was needed. This was accomplished by a series of SQL queries on a local machine. Furthermore, we worked to maintain an identical dataset as was used in the original dataset. This required filtering out all transfer patients and all patients missing required features. Additionally some features viz. Elixhauser comorbidity index, mean Sequential Organ Failure Assessment (SOFA), required manual calculation on a per patient basis, as they were not available directly from MIMIC. This yielded a dataset of approximately 1,600 patients. This number varies depending on the features supplied for a given prediction.</p>
+<p>This data munging was primarily done in Python using the Pandas library, but also required PostgreSQL for hosting the database. SQL queries were composed by hand. To prepare the data for model generation we needed to code several variables. Specifically, we needed to add binary classifiers for sub-therapeutic and supra-therapeutic to each patients dataset. Additionally a binary classifier was needed for ethnicity, and we followed the original coding used in the paper (white and non-white).</p>
+<!-- 
+talk about mimic ii / iii - was it, wheres it from etc. 
+what is needed to get a cohort
+what else you need to look up to get a full dataset
+that i ended up getting dataset from Mohammad
+that i needed to filter... started with 4,000, got down to x patients by filtering 
+out transfers etc. 
+
+then talk about tech I used to do this
+- python, numphy, sql, etc... 
+  -->
+<h3 id="model-generation"><span class="header-section-number">3.1.2</span> Model Generation</h3>
+<p>Once the dataset was prepared, generating the models was fairly simple. We used the Python library Scikit-learn's implementation of multinomial Logistic Regression to compute the two logistic regressions. Once the two logistic regressions for sub-therapeutic and supra-therapeutic aPTT are generated they can be stored for later use as long as the dataset is static. We avoided doing this to simulate a real world scenario where data is constantly being added overtime. <!-- 
+need to generate the 2 models using the features in python and x function calls.
+
+ --></p>
+<h3 id="model-prediction"><span class="header-section-number">3.1.3</span> Model Prediction</h3>
+<p>To generate the final dose curves for a specific patient we use scikit-learn's logistic regression predict_proba function. A function was created to output the probability of sub-therapeutic, sup-therapeutic aPTT given a patients features and a dose. For graphical purposes we call this function repeatedly for varying infusion rates in the range of 0 to 34 units/Kg/HR in steps of 0.5 units/Kg/HR. Predicting the specific infusion rate which maximizes the probability of a therapeutic outcome can also be thought of as finding the point which minimizes the sum of the probabilities of sub-therapeutic and supra-therapeutic (see equation 1). Using this fact we used the python library scipy's minimize_scalar function which implements Brent's Method and let it solve for the highest probability with a tolerance of .01%. The infusion rate curves and the optimal dose are then cached in Postgres for future queries that match the same patient features, given that the initial dataset has not changed.</p>
+<!-- from scipy.optimize import minimize_scalar -->
+<!-- from sklearn.linear_model import LogisticRegression -->
+<!-- 
+talk about how I used a loop to create the dose curve
+talk about how I used the maximization function to maximize the probability of therapeutic 
+ -->
 <h2 id="architecture"><span class="header-section-number">3.2</span> Architecture</h2>
+<!-- maybe include a diagram -->
+<h3 id="frontend"><span class="header-section-number">3.2.1</span> Frontend</h3>
+<p>The frontend for the application was built in Angular.js. Angular.js is client-side MVC (Model View Controller) framework that was chosen for it's strengths in quick prototyping. The user interface was built in Twitter Bootstrap, as it allows for rapid prototyping and easy implementation responsive design. Additionally, it has many css components such as progress bars that are useful for the design. <!-- explain this is a standalone version
+include screen shot maybe? 
+explain how user interacts with this on the frontend 
+explain how frontend was built 
+    angular, bootstrap, nvd3, etc...
+ --></p>
+<h3 id="backend"><span class="header-section-number">3.2.2</span> Backend</h3>
+<p>The backend for the application utilizes Python's Flask webframe work. Data is stored in postgreSQL and accessed through the sqlalchemy ORM library. The frontend interfaces with the server via a stateless REST api which enables the exchange of json data. The API definition is available in the appendix. <!-- 
+
+explain how frontend and backend connect
+what calls are made, idk. 
+
+ --></p>
 <!-- architecture here... include a figure.F igure \ref{ref_a_figure} shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. -->
 <!-- ![RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. \label{ref_a_figure}](source/figures/example_figure.pdf) -->
-<h2 id="implementation"><span class="header-section-number">3.3</span> Implementation</h2>
+<!-- ## Implementation  -->
 <!-- talk about the stack, tools used etc.  -->
 <!-- talk about how the tools used helped ensure rapid prototyping and good ui.  -->
 <!-- blank lines at end -necessary for template -->
-<h1 id="survey-explanation"><span class="header-section-number">4</span> Survey Explanation</h1>
+<h1 id="heparin-survey"><span class="header-section-number">4</span> Heparin Survey</h1>
 <!--
 After the introductory chapter, it seems fairly common to 
 include a chapter that reviews the literature and 
 introduces methodology used throughout the thesis.
 -->
-<h2 id="goals-of-survey"><span class="header-section-number">4.1</span> Goals of Survey</h2>
-<p>what the goals of the survey were. - what did we want to learn? hypothesis<br />
-how the survey was conducted. how we decided what information to ask about. what information that was logged.</p>
+<h2 id="survey-design"><span class="header-section-number">4.1</span> Survey Design</h2>
+<p>The primary objective of the survey was to learn about the user experience challenges involved with data-driven dosage techniques. To do this a test interface was developed and several medical doctors of varying disciplines attempted to use it. The survey consisted of 5 patient cases developed by domain experts to cover multiple different use cases for heparin. A doctor would first agree to a research disclosure, then fill out a short questionnaire about their background and relevant experience. Next an instruction page was displayed explaining the survey. Once the doctor read over the instructions and guidelines, they were presented with their first case which consists of some lab results and a short admission note. It was their task to determine a potential infusion rate based on traditional heparin dosing guidelines that were available to them. After choosing an infusion rate, the model showing the suggested optimal dose was displayed, along with the location of the users dose. The doctor then had the option of either adjusting the dose or sticking with their initial dose. Whenever dosing the doctor was able to leave notes to explain their reasoning. This task then was repeated for the remaining four patients. After completing the test, there is a short follow-up questionnaire consisting of a few questions to gauge receptiveness to the tool and measure any change in confidence in the tool. Additionally, we asked for other places they thought the tool could be used. <!-- Additionally, we wanted to learn about any advantages and disadvantages the technique brings to doctors. To do thi --> <!-- what the goals of the survey were. - what did we want to learn? hypothesis      --> <!-- how the survey was conducted.  --> <!-- how we decided what information to ask about.  --> <!-- what information that was logged.   --></p>
 <h2 id="architecture-and-implementation"><span class="header-section-number">4.2</span> Architecture and Implementation</h2>
-<p>talk about the stack, tools used etc. how it was implemented. user experience.<br />
-<!-- blank lines at end -necessary for template --></p>
+<p>The survey was implemented using the same technological stack as the calculator. By utilizing a SPA (single page application) methodology we were able to quickly iterate and make many changes over time. There were several candidate versions of the survey developed over time, but the final iteration allows for the most direct input of comments from doctors, instead of relying on proxy metrics such as time to complete cases that are similar with and without the heparin calculator.</p>
+<!-- talk about the stack, tools used etc. how it was implemented. user experience.   -->
+<!-- blank lines at end -necessary for template -->
 <h1 id="survey-results"><span class="header-section-number">5</span> Survey Results</h1>
 <!--
 After the introductory chapter, it seems fairly common to 
@@ -342,17 +397,17 @@ include a chapter that reviews the literature and
 introduces methodology used throughout the thesis.
 -->
 <h2 id="cumulative-results"><span class="header-section-number">5.1</span> Cumulative Results</h2>
-<p>how many difference people took survey, specialties, time since last dosed heparin.</p>
+<!-- how many difference people took survey, specialties, time since last dosed heparin.  -->
 <h2 id="dose-differences"><span class="header-section-number">5.2</span> Dose differences</h2>
-<p>how did the doses differ in part 1 and part 2 of the survey.</p>
+<!-- how did the doses differ in part 1 and part 2 of the survey.  -->
 <h2 id="time-differences"><span class="header-section-number">5.3</span> Time differences</h2>
-<p>time difference in part 1 and part 2.<br />
-maybe add some graphs here.</p>
+<!-- time difference in part 1 and part 2.   -->
+<!-- maybe add some graphs here.   -->
 <h2 id="understandingconfidence-in-results"><span class="header-section-number">5.4</span> Understanding/Confidence in Results</h2>
-<p>....</p>
+<!-- .... -->
 <h2 id="other-results"><span class="header-section-number">5.5</span> Other results</h2>
-<p>things that weren't expected.<br />
-other things of note</p>
+<!-- things that weren't expected.   -->
+<!-- other things of note   -->
 <!-- blank lines at end -necessary for template -->
 <h1 id="retrospective-next-steps"><span class="header-section-number">6</span> Retrospective / Next Steps</h1>
 <!--
@@ -385,12 +440,14 @@ introduces methodology used throughout the thesis.
 -->
 <!-- ##   -->
 <p>Summary of work that was done, then summary of results. Then summary of places for future work.</p>
+
 <!-- blank lines at end -necessary for template -->
 <h1 id="appendix-1-some-extra-stuff" class="unnumbered">Appendix 1: Some extra stuff</h1>
 <!-- 
 This could be a list of papers by the author for example 
 -->
 <ul>
+<li>api definition</li>
 <li>link to test software</li>
 <li>link to source code git repos</li>
 <li>screenshots and links to alternative design for testing aPTT over time</li>
@@ -439,13 +496,14 @@ Unordered sub-list.</li>
 <li><ul>
 <li><ul>
 <li><ul>
-<li>also some way</li>
+<li>also some way </li>
 </ul></li>
 </ul></li>
 </ul></li>
 </ul>
 <h1 id="appendix-2-some-extra-stuff" class="unnumbered">Appendix 2: Some extra stuff</h1>
 <p>This could be a list of papers by the author for example Also tutorials/people/stack overflow that was helpful. tom's markdown -&gt; latex</p>
+
 <!-- 
 Do not edit this page.
 
