@@ -162,7 +162,7 @@
                 <li><a href="#logistic-regression-approach"><span class="toc-section-number">2.2.1</span> Logistic Regression Approach</a></li>
                 <li><a href="#feature-selection"><span class="toc-section-number">2.2.2</span> Feature Selection</a></li>
                 </ul></li>
-                <li><a href="#summary-of-their-resultsfindings"><span class="toc-section-number">2.3</span> Summary of their results/findings</a></li>
+                <li><a href="#summary-of-their-results"><span class="toc-section-number">2.3</span> Summary of Their Results</a></li>
                 </ul></li>
                 <li><a href="#system-explanation"><span class="toc-section-number">3</span> System Explanation</a><ul>
                 <li><a href="#introduction-1"><span class="toc-section-number">3.1</span> Introduction</a></li>
@@ -253,7 +253,9 @@ talk about what I did
 
 
  -->
-<p>The primary goal of this study was to determine the technical implementation challenges and user experience challenges involved with a statistical dosing tool. Specifically, we implemented a heparin dosing tool that was first introduced in the paper <em>A data-driven approach to optimized medication dosing: a focus on heparin</em> <span class="citation">(Ghassemi et al. 2014)</span>. In the paper a statistical model is generated for predicting an optimal infusion rate for heparin for patients in intensive care units (ICUs). In this study, we reimplemented their existing models into an interactive web application, which allows the user to generate dosage guidelines based on a patient's features. Next a user study application was created, which presents the doctors with a patient case. The doctor initially provides their own suggestion for the infusion rate and is then presented with the model's prediction for an optimal infusion rate. After the doctor views the model, they have the opportunity to adjust their initial dose and provide a reasoning for their dose adjustments. Their interaction with the tool yields many metrics, including number of dose adjustments, speed of dosing, number of times guidelines were viewed. <!-- Their final multiple feature model improved outcome classification over a weight-only with a volume under the surface (VUS) of 0.48 vs. 0.42. --></p>
+<p>The primary goal of this study was to determine the technical implementation challenges and user experience challenges involved with a statistical dosing tool. Specifically, we implemented a heparin dosing tool that was first introduced in the paper <em>A data-driven approach to optimized medication dosing: a focus on heparin</em> <span class="citation">(Ghassemi et al. 2014)</span>. In the paper a statistical model is generated for predicting an optimal infusion rate for heparin for patients in intensive care units (ICUs). In this study, we reimplemented their existing models into an interactive web application, which allows the user to generate dosage guidelines based on a patient's features. Next a user study application was created, which presents the doctors with a patient case. The doctor initially provides their own suggestion for the infusion rate and is then presented with the model's prediction for an optimal infusion rate. After the doctor views the model, they have the opportunity to adjust their initial dose and provide a reasoning for their dose adjustments. Their interaction with the tool yields many metrics, including number of dose adjustments, speed of dosing, number of times guidelines were viewed.</p>
+<!-- One serious disadvantage of heparin risk factor analyses based on clinical trials alone is that they exclude patients who exhibit a high propensity for bleeding or severe complications caused by bleeding [2]. Retrospec- tive analyses like ours are able to overcome this issue by utilizing clinical data that is reflective of the entire pop- ulation actually receiving treatment.  -->
+<!-- Their final multiple feature model improved outcome classification over a weight-only with a volume under the surface (VUS) of 0.48 vs. 0.42. -->
 <!-- Statistical dosing tools offer an alternative to traditional dosing methodologies, which by nature cannot be tuned to a specific patient's every condition every time. Additionally, traditional dosing often is backed by heuristics, knowledge accumulated overtime by more experienced doctors. This knowledge is not peer reviewed and cannot be easily transfered to other new doctors. The promise of statistical dosing is that it   -->
 <!-- 
 To include a reference, add the citation key shown in the references.bib file. 
@@ -290,7 +292,9 @@ Although at this point a case been has made that multinomial logistic regression
 <!-- explain assumption of proportional odds-   -->
 <h3 id="feature-selection"><span class="header-section-number">2.2.2</span> Feature Selection</h3>
 <p>There are innumerable potential features one could consider as predictors of patient outcome. In their paper, Ghassemi et al. determined the salient features as follows: age, SOFA score, Elixhauser, Heparin dose, Measurement time, Creatinine, Ethnicity, Gender, ICU type, presence of pulmonary embolism, obesity, presence of end stage renal failure.</p>
-<h2 id="summary-of-their-resultsfindings"><span class="header-section-number">2.3</span> Summary of their results/findings</h2>
+<h2 id="summary-of-their-results"><span class="header-section-number">2.3</span> Summary of Their Results</h2>
+<p>The original paper and associated appendix document the efforts taken to validate the models. To summarize, they partitioned their dataset, dedicating 70% to training and 30% for validation. They then compared the calculated the predicted classification for each patient using both a full featured model and a weight-only model. The full featured model was more accurate than the weight-only approach as measured by Volume Under the Receiver Operating Characteristic Surface (the multiple class version of Area Under Receiver Operating Characteristic Curve), with values of 0.48 vs 0.42 [citation].<br />
+In closing, they noted that a randomized controlled trial would be necessary to determine if this mechanism is more effective for dosing. This thesis project represents the initial steps towards this trial.</p>
 <!-- Summary of the results from their paper.  It is better than weight based system alone.   -->
 <!-- They weren't able to test if it was better than an actual doctor because you'd need to have the system in place to do that. That is where this system/survey comes into play.   -->
 <!-- Insert an unordered list -->
@@ -306,16 +310,17 @@ include a chapter that reviews the literature and
 introduces methodology used throughout the thesis.
 -->
 <h2 id="introduction-1"><span class="header-section-number">3.1</span> Introduction</h2>
-<p>explain what it is - a standalone calculator, to familiar doctors with the technique. Goals of System<br />
-- mobile ready... talk about user experience/ui design.</p>
+<!-- explain what it is - a standalone calculator, to familiar doctors with the technique.  -->
+<!-- Goals of System   -->
+<!-- - mobile ready...  -->
+<!-- talk about user experience/ui design. -->
 <h2 id="architecture"><span class="header-section-number">3.2</span> Architecture</h2>
-<p>architecture here... include a figure.F igure  shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-<div class="figure">
-<embed src="source/figures/example_figure.pdf" />
-<p class="caption">RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. </p>
-</div>
+<!-- architecture here... include a figure.F igure \ref{ref_a_figure} shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. -->
+<!-- ![RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. \label{ref_a_figure}](source/figures/example_figure.pdf) -->
 <h2 id="implementation"><span class="header-section-number">3.3</span> Implementation</h2>
-<p>talk about the stack, tools used etc. talk about how the tools used helped ensure rapid prototyping and good ui. <!-- blank lines at end -necessary for template --></p>
+<!-- talk about the stack, tools used etc.  -->
+<!-- talk about how the tools used helped ensure rapid prototyping and good ui.  -->
+<!-- blank lines at end -necessary for template -->
 <h1 id="survey-explanation"><span class="header-section-number">4</span> Survey Explanation</h1>
 <!--
 After the introductory chapter, it seems fairly common to 
