@@ -3,6 +3,24 @@
 <!-- 
 This could be a list of papers by the author for example 
 -->
+\begin{table}[H]
+\centering
+\caption{Bolus Information}
+\label{my-label}
+\begin{tabular}{|llllll|}
+\hline
+Participant & Patient 1 & Patient 2 & Patient 3 & Patient 4 & Patient 5 \\ \hline
+1 & 80 & 80 & 60 & 80 & 60 \\
+2 & 80 & 60 & 0 & 40 & 0 \\
+3 & 5000 & 5000 & 80 & 80 & 80 \\
+4 & 5000 & 6000 & 3500 & 6000 & 5400 \\
+5 & 80 & 80 & 0 & 80 & 0 \\
+6 & 80 & 80 & 0 & 44.5 & 0 \\
+7 & 80 & 80 & 0 & 60 & 80 \\
+8 & 80 & 80 & 0 & 60 & 80 \\ \hline
+\end{tabular}
+\end{table}
+
 - api definition 
 - link to test software
 - link to source code git repos

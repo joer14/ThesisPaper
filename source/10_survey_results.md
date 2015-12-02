@@ -51,6 +51,34 @@ Median Dose & 18 & 20 & 18 & 14 & 13 & 16 & 15 & 15 & 16 & 18 \\ \hline
 \end{tabulary}
 \end{adjustbox}
 \end{table}
+
+\begin{table}[H]
+\centering
+\caption{Timing Results}
+\label{my-label}
+\begin{adjustbox}{max width=\textwidth}
+
+\begin{tabulary}{15cm}{|L|LL|LL|LL|LL|LL|r|}
+\hline
+ & \multicolumn{2}{l|}{Patient 1} & \multicolumn{2}{l|}{Patient 2} & \multicolumn{2}{l|}{Patient 3} & \multicolumn{2}{l|}{Patient 4} & \multicolumn{2}{l|}{Patient 5} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{Participant} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \multicolumn{1}{l|}{\textbf{Total Time}} \\ \hline
+1 & 67 & 38 & 21 & 29 & 30 & 37 & 38 & 27 & 23 & 44 & 5 mins, 54 secs \\
+2 & 136 & 42 & 49 & 45 & 53 & 33 & 98 & 26 & 112 & 19 & 10 mins, 13 secs \\
+3 & 38 & 38 & 32 & 34 & 52 & 34 & 68 & 238 & 45 & 28 & 10 mins, 7 secs \\
+4 & 23 & 69 & 50 & 53 & 237 & 79 & 96 & 32 & 86 & 72 & 13 mins, 17 secs \\
+5 & 11 & 8 & 87 & 15 & 24 & 25 & 9 & 18 & 54 & 7 & 4 mins, 18 secs \\
+6 & 55 & 60 & 25 & 84 & 38 & 21 & 85 & 46 & 51 & 22 & 8 mins, 7 secs \\
+7 & 70 & 86 & 45 & 58 & 442 & 51 & 95 & 36 & 94 & 36 & 16 mins, 53 secs \\
+8 & 135 & 83 & 54 & 40 & 29 & 19 & 29 & 18 & 44 & 50 & 8 mins, 21 secs \\ \hline
+\textbf{Min Time} & 11 & 8 & 21 & 15 & 24 & 19 & 9 & 18 & 23 & 7 & \multicolumn{1}{l|}{} \\
+\textbf{Max Time} & 136 & 86 & 87 & 84 & 442 & 79 & 98 & 238 & 112 & 72 & \multicolumn{1}{l|}{} \\
+\textbf{Standard Deviation} & 47 & 26 & 21 & 21 & 150 & 20 & 35 & 74 & 30 & 20 & \multicolumn{1}{l|}{} \\
+\textbf{Mean Time} & 67 & 53 & 45 & 45 & 113 & 37 & 65 & 55 & 64 & 35 & \multicolumn{1}{l|}{9 mins, 39 secs} \\
+\textbf{Median Time} & 61 & 51 & 47 & 42.5 & 45 & 33.5 & 76.5 & 29.5 & 52.5 & 32 & \multicolumn{1}{l|}{7 mins, 51 secs} \\ \hline
+\end{tabulary}
+\end{adjustbox}
+\end{table}
+
 <!-- 
 \begin{table}
 \centering
