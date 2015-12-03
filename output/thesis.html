@@ -182,11 +182,8 @@
                 <li><a href="#survey-results"><span class="toc-section-number">5</span> Survey Results</a><ul>
                 <li><a href="#primary-findings"><span class="toc-section-number">5.1</span> Primary Findings</a></li>
                 <li><a href="#participants-profiles"><span class="toc-section-number">5.2</span> Participants Profiles</a></li>
-                <li><a href="#dose-differences"><span class="toc-section-number">5.3</span> Dose differences</a></li>
-                <li><a href="#time-differences"><span class="toc-section-number">5.4</span> Time differences</a></li>
-                <li><a href="#user-reported-confidence"><span class="toc-section-number">5.5</span> User Reported Confidence</a></li>
-                <li><a href="#user-comments"><span class="toc-section-number">5.6</span> User Comments</a></li>
-                <li><a href="#other-results"><span class="toc-section-number">5.7</span> Other results</a></li>
+                <li><a href="#dose-differences"><span class="toc-section-number">5.3</span> Dose Differences</a></li>
+                <li><a href="#user-reported-confidence"><span class="toc-section-number">5.4</span> User Reported Confidence</a></li>
                 </ul></li>
                 <li><a href="#retrospective-next-steps"><span class="toc-section-number">6</span> Retrospective / Next Steps</a><ul>
                 <li><a href="#shortcomings-in-the-survey"><span class="toc-section-number">6.1</span> Shortcomings in the Survey</a></li>
@@ -379,7 +376,7 @@ explain how frontend was built
  -->
 <h3 id="backend"><span class="header-section-number">3.2.2</span> Backend</h3>
 
-<p>The backend for the application utilizes Python's Flask webframe work. Data is stored in postgreSQL and accessed through the sqlalchemy object relational mapping library. The frontend interfaces with the server via a stateless RESTful API which enables the exchange of json data. The API definition is available in the appendix. Figure  shows an example of how queries are performed currently.</p>
+<p>The backend for the application utilizes Python's Flask webframe work. Data is stored in postgreSQL and accessed through the sqlalchemy object relational mapping library. The frontend interfaces with the server via a stateless RESTful API which enables the exchange of json data. Figure  shows an example of how a client interacts with the backend server currently.</p>
 <!-- 
 
 explain how frontend and backend connect
@@ -418,30 +415,31 @@ introduces methodology used throughout the thesis.
 -->
 <!-- maybe add a little intro... short description of primary findings -->
 <h2 id="primary-findings"><span class="header-section-number">5.1</span> Primary Findings</h2>
-<p>Participants adjusted their doses 72% of time after reviewing the model, which resulted in a higher probability of therapeutic outcome in 82% of the adjustments. Additionally, participants reported greater confidence when using the tool but also expressed some hesitation with adopting the tool, often due to a lack of understanding of the underlying models. For more detailed information continue reading. Access to the extended survey results can be found in <a href="#appendix-1-full-survey-results">Appendix 1</a>.</p>
+<p>Participants adjusted their doses 72% of time after reviewing the model, which resulted in a higher probability of therapeutic outcome in 82% of the adjustments. Additionally, participants reported greater confidence when using the tool but also expressed some hesitation with adopting the tool, often due to a lack of understanding of the underlying models. More information follows. Access to the extended survey results can be found in <a href="#appendix-1-full-survey-results">Appendix 1</a>.</p>
 <h2 id="participants-profiles"><span class="header-section-number">5.2</span> Participants Profiles</h2>
 <p>In total nine participants, all medical doctors completed the survey. They range in experience from 4 to 32 years practicing. Of the nine, one participant is a practicing physician in Ethiopia, and the rest practiced in the United States. One participant completed the study from a mobile device and the others from a traditional laptop or desktop computer. Five of the nine reported that they frequently prescribe heparin (at least once a week) in their current position. One participant reported prescribing it infrequently (once a month), two reported prescribing it rarely and one reported prescribing never. All participants reported that in sometime in the past they prescribed it frequently. Participant specialties can be found in Table . Although nine participants took the survey, one participant's infusion rates were disqualified from the dataset because they were 100 times greater than the mean. Their comments were still kept for analysis.</p>
 <!-- ## Cumulative Results -->
 <!-- how many difference people took survey, specialties, time since last dosed heparin.  -->
-<h2 id="dose-differences"><span class="header-section-number">5.3</span> Dose differences</h2>
-<p>Each of the eight participants prescribed heparin twice to five different patients, yielding a total of 80 infusion rates. In Table , for each patient there is a suggested optimal infusion rate (IR) in the header. This is the number that was displayed to the user after they entered their initial infusion rate <em>IR1</em>. <em>IR2</em> is the value they prescribed after viewing the optimal dosage curve and the suggested infusion rate.<br />
-In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect that specific user experiencing difficulty understanding the tool.<br />
-<!-- how did the doses differ in part 1 and part 2 of the survey.  --></p>
-<h2 id="time-differences"><span class="header-section-number">5.4</span> Time differences</h2>
+
+<h2 id="dose-differences"><span class="header-section-number">5.3</span> Dose Differences</h2>
+<p>Each of the eight participants prescribed heparin twice to five different patients, yielding a total of 80 infusion rates. In Table , for each patient there is a suggested optimal infusion rate (IR) in the top header. This is the number that was displayed to the user after they entered their initial infusion rate <em>IR1</em>. <em>IR2</em> is the value they prescribed after viewing the optimal dosage curve and the suggested infusion rate.<br />
+In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect that specific user experiencing difficulty understanding the tool.</p>
+<p>As for the reasoning for adjusting doses they vary greatly as can be seen in Table . Those who choose to adjust towards the model values generally expressed trust in the model, while some users, in particularly those who currently prescribe heparin frequently where more wary of it. <!-- expand on this!!!! --></p>
+<!-- how did the doses differ in part 1 and part 2 of the survey.  -->
+<!-- ## Time differences -->
 <!-- time difference in part 1 and part 2.   -->
 <!-- maybe add some graphs here.   -->
-<h2 id="user-reported-confidence"><span class="header-section-number">5.5</span> User Reported Confidence</h2>
-<h2 id="user-comments"><span class="header-section-number">5.6</span> User Comments</h2>
+<h2 id="user-reported-confidence"><span class="header-section-number">5.4</span> User Reported Confidence</h2>
+<p>Eight of the nine participants reported they felt more confident dosing with the tool than without. One participant said it did not affect their confidence.</p>
+<!-- add some type of closing or transition ??? -->
+<!-- ## User Comments  -->
 <!-- just state comments here - address them more fully in the next section. -->
 <!-- requesting more information  -->
+<pre><code>&lt;!-- understanding --&gt;</code></pre>
 <!-- round off the drug -->
-<!-- understanding -->
-<!-- add reasons why they did and did not change their dose -->
 <!-- .... -->
-<h2 id="other-results"><span class="header-section-number">5.7</span> Other results</h2>
+<!-- ## Other results -->
 <!-- Something about other results... blah blah blah.  -->
-
-
 <!-- 
 \begin{table}
 \centering
@@ -584,6 +582,8 @@ This could be a list of papers by the author for example
 </li>
 <li>If you have any further comments, questions, suggestions, ideas for improvement, etc please enter them below.</li>
 </ol>
+
+
 
 
 

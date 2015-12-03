@@ -127,6 +127,34 @@ Participant & Question 4 - Other Comments \\ \hline
 
 \begin{table}[H]
 \centering
+\caption{Timing Results}
+\label{table:timing}
+\begin{adjustbox}{max width=\textwidth}
+
+\begin{tabulary}{15cm}{|L|LL|LL|LL|LL|LL|r|}
+\hline
+ & \multicolumn{2}{l|}{Patient 1} & \multicolumn{2}{l|}{Patient 2} & \multicolumn{2}{l|}{Patient 3} & \multicolumn{2}{l|}{Patient 4} & \multicolumn{2}{l|}{Patient 5} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{Participant} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \multicolumn{1}{l|}{\textbf{Total Time}} \\ \hline
+1 & 67 & 38 & 21 & 29 & 30 & 37 & 38 & 27 & 23 & 44 & 5 mins, 54 secs \\
+2 & 136 & 42 & 49 & 45 & 53 & 33 & 98 & 26 & 112 & 19 & 10 mins, 13 secs \\
+3 & 38 & 38 & 32 & 34 & 52 & 34 & 68 & 238 & 45 & 28 & 10 mins, 7 secs \\
+4 & 23 & 69 & 50 & 53 & 237 & 79 & 96 & 32 & 86 & 72 & 13 mins, 17 secs \\
+5 & 11 & 8 & 87 & 15 & 24 & 25 & 9 & 18 & 54 & 7 & 4 mins, 18 secs \\
+6 & 55 & 60 & 25 & 84 & 38 & 21 & 85 & 46 & 51 & 22 & 8 mins, 7 secs \\
+7 & 70 & 86 & 45 & 58 & 442 & 51 & 95 & 36 & 94 & 36 & 16 mins, 53 secs \\
+8 & 135 & 83 & 54 & 40 & 29 & 19 & 29 & 18 & 44 & 50 & 8 mins, 21 secs \\ \hline
+\textbf{Min Time} & 11 & 8 & 21 & 15 & 24 & 19 & 9 & 18 & 23 & 7 & \multicolumn{1}{l|}{} \\
+\textbf{Max Time} & 136 & 86 & 87 & 84 & 442 & 79 & 98 & 238 & 112 & 72 & \multicolumn{1}{l|}{} \\
+\textbf{Standard Deviation} & 47 & 26 & 21 & 21 & 150 & 20 & 35 & 74 & 30 & 20 & \multicolumn{1}{l|}{} \\
+\textbf{Mean Time} & 67 & 53 & 45 & 45 & 113 & 37 & 65 & 55 & 64 & 35 & \multicolumn{1}{l|}{9 mins, 39 secs} \\
+\textbf{Median Time} & 61 & 51 & 47 & 42.5 & 45 & 33.5 & 76.5 & 29.5 & 52.5 & 32 & \multicolumn{1}{l|}{7 mins, 51 secs} \\ \hline
+\end{tabulary}
+\end{adjustbox}
+\end{table}
+
+
+\begin{table}[H]
+\centering
 \caption{Bolus Information}
 \label{my-label}
 \begin{tabular}{|l|lllll|}
@@ -141,6 +169,51 @@ Participant & Patient 1 & Patient 2 & Patient 3 & Patient 4 & Patient 5 \\ \hlin
 7 & 80 & 80 & 0 & 60 & 80 \\
 8 & 80 & 80 & 0 & 60 & 80 \\ \hline
 \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Reasons participants choose to adjust or not to adjust their initial dose.}
+\label{table:YESNO}
+\begin{adjustbox}{max width=1\textwidth}
+\begin{tabulary}{1.2\textwidth}{|l|l|l|L|}
+\hline
+Participant & Patient \# & Adjust or Not & Why \\ \hline
+1 & 1 & Yes & need to get her there \\
+  & 2 & Yes & to get him there \\
+  & 3 & Yes & same reason as before - under dosed her \\
+  & 4 & Yes & need to get there \\
+  & 5 & Yes & to prevent further thrombosis \\ \hline
+2 & 1 & Yes & I'm relying on the model \\
+  & 2 & Yes & Model is probably better than my prediction as pt is pretty heavy \\
+  & 3 & Yes & model \\
+  & 4 & Yes & Bolus dose may well be too small \\
+  & 5 & Yes & I am relying on this model \\ \hline
+3 & 1 & Yes & model is close to my prediction and based on real data \\
+  & 2 & Yes & I actually made a mistake in my initial calculation! \\
+  & 3 & Yes & Makes sense, older pt may need less as indicated by model \\
+  & 4 & Yes & Graphs indicate higher likelihood of therapeutic result for this patient profile, and it seems reasonable to my initital estimate \\
+  & 5 & No & Close enough - no compelling reason to change \\ \hline
+4 & 1 & No & No PE yet.  Would follow labs to see where she goes. \\
+  & 2 & No & has active PE.  will adjust infusion based on individual response for Xa level. \\
+  & 3 & Yes & No clear emergency on type of dosing.  Pt stroke is completed.  Likely will not need a decompression unless bleeding occurs post heparinization. \\
+  & 4 & No & it's about the same and I'd rather be slightly high than low. \\
+  & 5 & Yes & if this is more likely to get to a therapeutic window quickly, would choose to do so. \\ \hline
+6 & 1 & No & Creatinine was elevated \\
+  & 3 & No & Risk of intracranial bleed \\
+  & 4 & Yes & Risk of continued thrombus greater than risk of bleeding \\
+  & 5 & No & Lack of evidence in this condition. \\ \hline
+7 & 4 & No & It is fairly equal. No meed to calculate the fractions \\
+  & 5 & No & Again only fractions \\ \hline
+8 & 1 & Yes & model said would be better. \\
+  & 2 & Yes & per model. \\
+  & 3 & Yes & per model. \\
+  & 4 & Yes & per model. \\ \hline
+9 & 1 & Yes & recommended \\
+9 & 2 & Yes & recommended \\ \hline
+\end{tabulary}
+\end{adjustbox}
 \end{table}
 
 

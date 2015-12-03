@@ -9,7 +9,7 @@ introduces methodology used throughout the thesis.
 <!-- maybe add a little intro... short description of primary findings -->
 ## Primary Findings
 
-Participants adjusted their doses 72% of time after reviewing the model, which resulted in a higher probability of therapeutic outcome in 82% of the adjustments. Additionally, participants reported greater confidence when using the tool but also expressed some hesitation with adopting the tool, often due to a lack of understanding of the underlying models. For more detailed information continue reading. Access to the extended survey results can be found in [Appendix 1](#appendix-1-full-survey-results).
+Participants adjusted their doses 72% of time after reviewing the model, which resulted in a higher probability of therapeutic outcome in 82% of the adjustments. Additionally, participants reported greater confidence when using the tool but also expressed some hesitation with adopting the tool, often due to a lack of understanding of the underlying models. More information follows. Access to the extended survey results can be found in [Appendix 1](#appendix-1-full-survey-results).
 
 ## Participants Profiles
 In total nine participants, all medical doctors completed the survey. They range in experience from 4 to 32 years practicing. Of the nine, one participant is a practicing physician in Ethiopia, and the rest practiced in the United States. One participant completed the study from a mobile device and the others from a traditional laptop or desktop computer. Five of the nine reported that they frequently prescribe heparin (at least once a week) in their current position. One participant reported prescribing it infrequently (once a month), two reported prescribing it rarely and one reported prescribing never. All participants reported that in sometime in the past they prescribed it frequently. Participant specialties can be found in Table \ref{table:pre1}. Although nine participants took the survey, one participant's infusion rates were disqualified from the dataset because they were 100 times greater than the mean. Their comments were still kept for analysis.
@@ -19,38 +19,9 @@ In total nine participants, all medical doctors completed the survey. They range
 <!-- ## Cumulative Results -->
 
 <!-- how many difference people took survey, specialties, time since last dosed heparin.  -->
-
-## Dose differences
-
-Each of the eight participants prescribed heparin twice to five different patients, yielding a total of 80 infusion rates. In Table \ref{table:ir}, for each patient there is a suggested optimal infusion rate (IR) in the header. This is the number that was displayed to the user after they entered their initial infusion rate *IR1*. *IR2* is the value they prescribed after viewing the optimal dosage curve and the suggested infusion rate.  
-In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect that specific user experiencing difficulty understanding the tool.   
-<!-- how did the doses differ in part 1 and part 2 of the survey.  -->
-
-
-## Time differences
-
-<!-- time difference in part 1 and part 2.   -->
-<!-- maybe add some graphs here.   -->
-
-## User Reported Confidence
-
-## User Comments 
-<!-- just state comments here - address them more fully in the next section. -->
-<!-- requesting more information  -->
-<!-- round off the drug -->
-<!-- understanding -->
-<!-- add reasons why they did and did not change their dose -->
-
-
-
-<!-- .... -->
-
-## Other results
-
-<!-- Something about other results... blah blah blah.  -->
 \begin{table}[H]
 \centering
-\caption{Infusion rates before after optimal dosage model was displayed. IR1 refers to the initial infusion rate, and IR2 refers the infusion rate chosen after viewing the model.}
+\caption{Infusion rates before and after optimal dosage model was displayed. IR1 refers to the initial infusion rate, and IR2 refers the infusion rate chosen after viewing the model.}
 \label{table:ir}
 \begin{adjustbox}{max width=\textwidth}
 \begin{tabulary}{15cm}{|L|RR|RR|RR|RR|RR|}
@@ -75,32 +46,46 @@ Median Dose & 18 & 20 & 18 & 14 & 13 & 16 & 15 & 15 & 16 & 18 \\ \hline
 \end{adjustbox}
 \end{table}
 
-\begin{table}[H]
-\centering
-\caption{Timing Results}
-\label{my-label}
-\begin{adjustbox}{max width=\textwidth}
+## Dose Differences
 
-\begin{tabulary}{15cm}{|L|LL|LL|LL|LL|LL|r|}
-\hline
- & \multicolumn{2}{l|}{Patient 1} & \multicolumn{2}{l|}{Patient 2} & \multicolumn{2}{l|}{Patient 3} & \multicolumn{2}{l|}{Patient 4} & \multicolumn{2}{l|}{Patient 5} & \multicolumn{1}{l|}{} \\ \hline
-\textbf{Participant} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \textbf{T1} & \textbf{T2} & \multicolumn{1}{l|}{\textbf{Total Time}} \\ \hline
-1 & 67 & 38 & 21 & 29 & 30 & 37 & 38 & 27 & 23 & 44 & 5 mins, 54 secs \\
-2 & 136 & 42 & 49 & 45 & 53 & 33 & 98 & 26 & 112 & 19 & 10 mins, 13 secs \\
-3 & 38 & 38 & 32 & 34 & 52 & 34 & 68 & 238 & 45 & 28 & 10 mins, 7 secs \\
-4 & 23 & 69 & 50 & 53 & 237 & 79 & 96 & 32 & 86 & 72 & 13 mins, 17 secs \\
-5 & 11 & 8 & 87 & 15 & 24 & 25 & 9 & 18 & 54 & 7 & 4 mins, 18 secs \\
-6 & 55 & 60 & 25 & 84 & 38 & 21 & 85 & 46 & 51 & 22 & 8 mins, 7 secs \\
-7 & 70 & 86 & 45 & 58 & 442 & 51 & 95 & 36 & 94 & 36 & 16 mins, 53 secs \\
-8 & 135 & 83 & 54 & 40 & 29 & 19 & 29 & 18 & 44 & 50 & 8 mins, 21 secs \\ \hline
-\textbf{Min Time} & 11 & 8 & 21 & 15 & 24 & 19 & 9 & 18 & 23 & 7 & \multicolumn{1}{l|}{} \\
-\textbf{Max Time} & 136 & 86 & 87 & 84 & 442 & 79 & 98 & 238 & 112 & 72 & \multicolumn{1}{l|}{} \\
-\textbf{Standard Deviation} & 47 & 26 & 21 & 21 & 150 & 20 & 35 & 74 & 30 & 20 & \multicolumn{1}{l|}{} \\
-\textbf{Mean Time} & 67 & 53 & 45 & 45 & 113 & 37 & 65 & 55 & 64 & 35 & \multicolumn{1}{l|}{9 mins, 39 secs} \\
-\textbf{Median Time} & 61 & 51 & 47 & 42.5 & 45 & 33.5 & 76.5 & 29.5 & 52.5 & 32 & \multicolumn{1}{l|}{7 mins, 51 secs} \\ \hline
-\end{tabulary}
-\end{adjustbox}
-\end{table}
+Each of the eight participants prescribed heparin twice to five different patients, yielding a total of 80 infusion rates. In Table \ref{table:ir}, for each patient there is a suggested optimal infusion rate (IR) in the top header. This is the number that was displayed to the user after they entered their initial infusion rate *IR1*. *IR2* is the value they prescribed after viewing the optimal dosage curve and the suggested infusion rate.  
+In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect that specific user experiencing difficulty understanding the tool.
+
+As for the reasoning for adjusting doses they vary greatly as can be seen in Table \ref{table:YESNO}. Those who choose to adjust towards the model values generally expressed trust in the model, while some users, in particularly those who currently prescribe heparin frequently where more wary of it. 
+<!-- expand on this!!!! -->
+
+
+<!-- how did the doses differ in part 1 and part 2 of the survey.  -->
+
+
+<!-- ## Time differences -->
+
+<!-- time difference in part 1 and part 2.   -->
+<!-- maybe add some graphs here.   -->
+## User Reported Confidence
+
+Eight of the nine participants reported they felt more confident dosing with the tool than without. One participant said it did not affect their confidence. 
+
+<!-- add some type of closing or transition ??? -->
+
+
+<!-- ## User Comments  -->
+<!-- just state comments here - address them more fully in the next section. -->
+
+<!-- requesting more information  -->
+	<!-- understanding -->
+<!-- round off the drug -->
+
+
+
+
+
+<!-- .... -->
+
+<!-- ## Other results -->
+
+<!-- Something about other results... blah blah blah.  -->
+
 
 <!-- 
 \begin{table}
