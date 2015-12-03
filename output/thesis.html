@@ -192,8 +192,11 @@
                 <li><a href="#implementation-differences-in-future-version"><span class="toc-section-number">6.3</span> Implementation Differences in future version</a></li>
                 </ul></li>
                 <li><a href="#conclusion"><span class="toc-section-number">7</span> Conclusion</a></li>
-                <li><a href="#appendix-1-some-extra-stuff">Appendix 1: Some extra stuff</a></li>
-                <li><a href="#appendix-2-some-extra-stuff">Appendix 2: Some extra stuff</a></li>
+                <li><a href="#appendix-1-full-survey-results">Appendix 1: Full Survey Results</a></li>
+                <li><a href="#appendix-2-application-user-interface">Appendix 2: Application User Interface</a><ul>
+                <li><a href="#calculator-interface"><span class="toc-section-number">7.1</span> Calculator Interface</a></li>
+                <li><a href="#survey-interface"><span class="toc-section-number">7.2</span> Survey Interface</a></li>
+                </ul></li>
                 <li><a href="#references">References</a></li>
                 </ul>
             </div>
@@ -358,20 +361,26 @@ talk about how I used the maximization function to maximize the probability of t
  -->
 <h2 id="architecture"><span class="header-section-number">3.2</span> Architecture</h2>
 <!-- maybe include a diagram -->
+<!-- Figure \ref{ref_a_figure} shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. -->
 <h3 id="frontend"><span class="header-section-number">3.2.1</span> Frontend</h3>
-<p>The frontend for the application was built in Angular.js. Angular.js is client-side MVC (Model View Controller) framework that was chosen for it's strengths in quick prototyping. The user interface was built in Twitter Bootstrap, as it allows for rapid prototyping and easy implementation responsive design. Additionally, it has many css components such as progress bars that are useful for the design. <!-- explain this is a standalone version
+
+<p>The frontend for the application was built in Angular.js. Angular.js is client-side MVC (Model View Controller) framework that was chosen for it's strengths in quick prototyping. The user interface was built on Twitter Bootstrap, as it was familiar to the authors, is relatively easy to use and offers built in responsive design. Additionally, it has many CSS components such as nice forms and progress bars that are useful for the design.<br />
+For graphing the D3.js, NV-D3 and Angular-nvd3 libraries were used which enables inserting graphs using simple directives. Figure  shows an example output of the standalone calculator as seen on <a href="https://hepstack-stage.herokuapp.com/#/calc">/#/calc</a>.</p>
+<!-- explain this is a standalone version
 include screen shot maybe? 
 explain how user interacts with this on the frontend 
 explain how frontend was built 
     angular, bootstrap, nvd3, etc...
- --></p>
+ -->
 <h3 id="backend"><span class="header-section-number">3.2.2</span> Backend</h3>
-<p>The backend for the application utilizes Python's Flask webframe work. Data is stored in postgreSQL and accessed through the sqlalchemy ORM library. The frontend interfaces with the server via a stateless REST api which enables the exchange of json data. The API definition is available in the appendix. <!-- 
+
+<p>The backend for the application utilizes Python's Flask webframe work. Data is stored in postgreSQL and accessed through the sqlalchemy object relational mapping library. The frontend interfaces with the server via a stateless RESTful API which enables the exchange of json data. The API definition is available in the appendix. Figure  shows an example of how queries are performed currently.</p>
+<!-- 
 
 explain how frontend and backend connect
 what calls are made, idk. 
 
- --></p>
+ -->
 <!-- architecture here... include a figure.F igure \ref{ref_a_figure} shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. -->
 <!-- ![RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. \label{ref_a_figure}](source/figures/example_figure.pdf) -->
 <!-- ## Implementation  -->
@@ -501,7 +510,7 @@ introduces methodology used throughout the thesis.
 <p>Summary of work that was done, then summary of results. Then summary of places for future work.</p>
 
 <!-- blank lines at end -necessary for template -->
-<h1 id="appendix-1-some-extra-stuff" class="unnumbered">Appendix 1: Some extra stuff</h1>
+<h1 id="appendix-1-full-survey-results" class="unnumbered">Appendix 1: Full Survey Results</h1>
 <!-- 
 This could be a list of papers by the author for example 
 -->
@@ -511,14 +520,38 @@ This could be a list of papers by the author for example
 
 
 
-<ul>
-<li>api definition</li>
-<li>link to test software</li>
-<li>link to source code git repos</li>
-<li>screenshots and links to alternative design for testing aPTT over time</li>
-<li>links to data sources/notebook of documentation</li>
-<li>extended results from survey.<br />
-.. tables with stats like ave, std deviation etc for each patient 1-10 ..- <!-- 
+<!-- 
+Table: Here's the caption. It, too, may span
+multiple lines.
+
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[^1]: Here is the footnote.
+
+[^longnote]: Here's one with multiple blocks.
+
+* fruits
+    + apples
+        - macintosh
+        - red delicious
+    + pears
+    + peaches
+* vegetables
+    + broccoli
+    + chard
+
+    test  
+    verabitum text  
+    we will see if this works  
+- api definition 
+- link to test software
+- link to source code git repos
+- screenshots and links to alternative design for testing aPTT over time
+- links to data sources/notebook of documentation
+- extended results from survey.  
+.. tables with stats like ave, std deviation etc for each patient 1-10
+..- 
+<!-- 
 1. First ordered list item
 2. Another item  
 Unordered sub-list. 
@@ -542,10 +575,28 @@ Unordered sub-list.
  - - blablabla
  - - blublublu
  - - - dfdf
-- - - - also some way  --> </li>
-</ul>
-<h1 id="appendix-2-some-extra-stuff" class="unnumbered">Appendix 2: Some extra stuff</h1>
-<p>This could be a list of papers by the author for example Also tutorials/people/stack overflow that was helpful. tom's markdown -&gt; latex</p>
+- - - - also some way  -->
+
+<h1 id="appendix-2-application-user-interface" class="unnumbered">Appendix 2: Application User Interface</h1>
+<!-- This could be a list of papers by the author for example  -->
+<!-- Also tutorials/people/stack overflow that was helpful.  -->
+<!-- tom's markdown -> latex  -->
+<p>Below are selected screenshots of the calculator application and survey application in use. You encouraged to try them out yourself directly at <a href="https://hepstack-stage.herokuapp.com/" class="uri">https://hepstack-stage.herokuapp.com/</a>.</p>
+<h2 id="calculator-interface"><span class="header-section-number">7.1</span> Calculator Interface</h2>
+
+<h2 id="survey-interface"><span class="header-section-number">7.2</span> Survey Interface</h2>
+
+<!-- [Link](https://hepstack-stage.herokuapp.com/#/presurvey) -->
+
+
+<!-- [Link](https://hepstack-stage.herokuapp.com/#/part3info) -->
+
+<!-- \newpage -->
+<!-- [Link](https://hepstack-stage.herokuapp.com/#/part3) -->
+
+<!--  [Link](https://hepstack-stage.herokuapp.com/#/part3) -->
+
+<!-- [Link](https://hepstack-stage.herokuapp.com/#/postsurvey) -->
 
 <!-- 
 Do not edit this page.

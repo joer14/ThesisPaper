@@ -1,4 +1,4 @@
-# Appendix 1: Some extra stuff {.unnumbered}
+# Appendix 1: Full Survey Results {.unnumbered}
 
 <!-- 
 This could be a list of papers by the author for example 
@@ -7,7 +7,7 @@ This could be a list of papers by the author for example
 \centering
 \caption{Bolus Information}
 \label{my-label}
-\begin{tabular}{|llllll|}
+\begin{tabular}{|l|lllll|}
 \hline
 Participant & Patient 1 & Patient 2 & Patient 3 & Patient 4 & Patient 5 \\ \hline
 1 & 80 & 80 & 60 & 80 & 60 \\
@@ -113,6 +113,29 @@ Participant & Question 3 \\ \hline
 \end{table}
 
 
+<!-- 
+Table: Here's the caption. It, too, may span
+multiple lines.
+
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[^1]: Here is the footnote.
+
+[^longnote]: Here's one with multiple blocks.
+
+* fruits
+    + apples
+        - macintosh
+        - red delicious
+    + pears
+    + peaches
+* vegetables
+    + broccoli
+    + chard
+
+    test  
+    verabitum text  
+    we will see if this works  
 - api definition 
 - link to test software
 - link to source code git repos
@@ -145,6 +168,6 @@ Unordered sub-list.
  - - blablabla
  - - blublublu
  - - - dfdf
-- - - - also some way  -->
+- - - - also some way  --> 
 \newpage
 
