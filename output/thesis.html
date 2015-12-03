@@ -183,22 +183,19 @@
                 <li><a href="#primary-findings"><span class="toc-section-number">5.1</span> Primary Findings</a></li>
                 <li><a href="#participant-profiles"><span class="toc-section-number">5.2</span> Participant Profiles</a></li>
                 <li><a href="#dose-differences"><span class="toc-section-number">5.3</span> Dose Differences</a></li>
-                <li><a href="#user-reported-confidence"><span class="toc-section-number">5.4</span> User Reported Confidence</a></li>
+                <li><a href="#user-feedback"><span class="toc-section-number">5.4</span> User Feedback</a></li>
                 </ul></li>
-                <li><a href="#retrospective-next-steps"><span class="toc-section-number">6</span> Retrospective / Next Steps</a><ul>
-                <li><a href="#shortcomings-in-the-survey"><span class="toc-section-number">6.1</span> Shortcomings in the Survey</a></li>
-                <li><a href="#places-for-future-research"><span class="toc-section-number">6.2</span> Places for Future Research</a></li>
-                <li><a href="#implementation-differences-in-future-version"><span class="toc-section-number">6.3</span> Implementation Differences in future version</a></li>
+                <li><a href="#retrospective-next-steps"><span class="toc-section-number">6</span> Retrospective, Next Steps</a><ul>
+                <li><a href="#challenges"><span class="toc-section-number">6.1</span> Challenges</a></li>
+                <li><a href="#shortcomings-in-the-survey"><span class="toc-section-number">6.2</span> Shortcomings in the Survey</a></li>
+                <li><a href="#implementation-differences-in-future-versions"><span class="toc-section-number">6.3</span> Implementation Differences in Future Versions</a></li>
                 </ul></li>
                 <li><a href="#conclusion"><span class="toc-section-number">7</span> Conclusion</a></li>
                 <li><a href="#appendix-1-full-survey-results">Appendix 1: Full Survey Results</a><ul>
                 <li><a href="#presurvey-questionnaire"><span class="toc-section-number">7.1</span> Presurvey Questionnaire:</a></li>
                 <li><a href="#follow-up-survey"><span class="toc-section-number">7.2</span> Follow Up Survey</a></li>
                 </ul></li>
-                <li><a href="#appendix-2-application-user-interface">Appendix 2: Application User Interface</a><ul>
-                <li><a href="#calculator-interface"><span class="toc-section-number">7.3</span> Calculator Interface</a></li>
-                <li><a href="#survey-interface"><span class="toc-section-number">7.4</span> Survey Interface</a></li>
-                </ul></li>
+                <li><a href="#appendix-3-research-resources">Appendix 3: Research Resources</a></li>
                 <li><a href="#references">References</a></li>
                 </ul>
             </div>
@@ -311,7 +308,7 @@ Although at this point a case been has made that multinomial logistic regression
 <!-- explain how they choose features for the model.   -->
 <!-- explain assumption of proportional odds-   -->
 <h3 id="feature-selection"><span class="header-section-number">2.2.2</span> Feature Selection</h3>
-<p>There are innumerable potential features one could consider as predictors of patient outcome. In their paper, Ghassemi et al. determined the salient features as follows: age, SOFA score, Elixhauser, Heparin dose, Measurement time, Creatinine, Ethnicity, Gender, ICU type, presence of pulmonary embolism, obesity, presence of end stage renal failure.</p>
+<p>There are innumerable potential features one could consider as predictors of patient outcome. In their paper, Ghassemi et al. determined the salient features as follows: age, SOFA score, Elixhauser, Heparin dose, APTT Measurement time, Creatinine, Ethnicity, Gender, ICU type, presence of pulmonary embolism, obesity, presence of end stage renal failure.</p>
 <h2 id="summary-of-prior-work"><span class="header-section-number">2.3</span> Summary of Prior Work</h2>
 <p>The original paper and associated appendix document the efforts taken to validate the models. To summarize, they partitioned their dataset, dedicating 70% to training and 30% for validation. They then compared the calculated the predicted classification for each patient using both a full featured model and a weight-only model. The full featured model was more accurate than the weight-only approach as measured by Volume Under the Receiver Operating Characteristic Surface (the multiple class version of Area Under Receiver Operating Characteristic Curve), with values of 0.48 vs 0.42 [citation].<br />
 In closing, they noted that a randomized controlled trial would be necessary to determine if this mechanism is more effective for dosing. This thesis project represents the initial steps towards this trial.</p>
@@ -368,7 +365,7 @@ talk about how I used the maximization function to maximize the probability of t
 <h3 id="frontend"><span class="header-section-number">3.2.1</span> Frontend</h3>
 
 <p>The frontend for the application was built in Angular.js. Angular.js is client-side MVC (Model View Controller) framework that was chosen for it's strengths in quick prototyping. The user interface was built on Twitter Bootstrap, as it was familiar to the authors, is relatively easy to use and offers built in responsive design. Additionally, it has many CSS components such as nice forms and progress bars that are useful for the design.<br />
-For graphing the D3.js, NV-D3 and Angular-nvd3 libraries were used which enables inserting graphs using simple directives. Figure  shows an example output of the standalone calculator as seen in <a href="#appendix-2-application-user-interface">Appendix 2</a> or <a href="https://hepstack-stage.herokuapp.com/#/calc">online</a>.</p>
+For graphing the D3.js, NV-D3 and Angular-nvd3 libraries were used which enables inserting graphs using simple directives. Figure  shows an example output of the standalone calculator as seen in <a href="#appendix-2-application-user-interface">Appendix 2</a> or <a href="https://hepstack-stage.herokuapp.com/#/calc">online</a>. The two prominent dots represent the optimal doses for each model. Note that in this example, the weight-only model predicts that the probability that the patient will reach therapeutic state is higher than the all features model.</p>
 <!-- explain this is a standalone version
 include screen shot maybe? 
 explain how user interacts with this on the frontend 
@@ -418,21 +415,19 @@ introduces methodology used throughout the thesis.
 <h2 id="primary-findings"><span class="header-section-number">5.1</span> Primary Findings</h2>
 <p>Participants adjusted their doses 72% of time after reviewing the model, which resulted in a higher probability of therapeutic outcome in 82% of the adjustments. Additionally, participants reported greater confidence when using the tool but also expressed some hesitation with adopting the tool, often due to a lack of understanding of the underlying models. More information follows. Access to the extended survey results can be found in <a href="#appendix-1-full-survey-results">Appendix 1</a>.</p>
 <h2 id="participant-profiles"><span class="header-section-number">5.2</span> Participant Profiles</h2>
-<p>In total nine participants, all medical doctors completed the survey. They range in experience from 4 to 32 years practicing. Of the nine, one participant is a practicing physician in Ethiopia, and the rest practiced in the United States. One participant completed the study from a mobile device and the others from a traditional laptop or desktop computer. Five of the nine reported that they frequently prescribe heparin (at least once a week) in their current position. One participant reported prescribing it infrequently (once a month), two reported prescribing it rarely and one reported prescribing never. All participants reported that in sometime in the past they prescribed it frequently. Participant specialties can be found in Table . Although nine participants took the survey, one participant's infusion rates were disqualified from the dataset because they were 100 times greater than the mean. Their comments were still kept for analysis.</p>
+<p>In total nine participants, all medical doctors completed the survey. They range in experience from 4 to 32 years practicing. Of the nine, one participant is a practicing physician in Ethiopia, and the rest practice in the United States. One participant completed the study from a mobile device and the others from a traditional laptop or desktop computer. Five of the nine reported that they frequently prescribe heparin (at least once a week) in their current position. One participant reported prescribing it infrequently (once a month), two reported prescribing it rarely and one reported prescribing never. All participants reported that in sometime in the past they prescribed it frequently. The participant medical specialties can be found in Table , but ranged from hematopathology to neuroendovascular surgery. Although nine participants took the survey, one participant's infusion rates were disqualified from the data analysis because they were 100 times greater than the mean. Their comments were still kept for additional analysis.</p>
 <!-- ## Cumulative Results -->
 <!-- how many difference people took survey, specialties, time since last dosed heparin.  -->
 
 <h2 id="dose-differences"><span class="header-section-number">5.3</span> Dose Differences</h2>
 <p>Each of the eight participants prescribed heparin twice to five different patients, yielding a total of 80 infusion rates. In Table , for each patient there is a suggested optimal infusion rate (IR) in the top header. This is the number that was displayed to the user after they entered their initial infusion rate <em>IR1</em>. <em>IR2</em> is the value they prescribed after viewing the optimal dosage curve and the suggested infusion rate.<br />
-In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect that specific user experiencing difficulty understanding the tool.</p>
-<p>As for the reasoning for adjusting doses they vary greatly as can be seen in Table . Those who choose to adjust towards the model values generally expressed trust in the model, while some users, in particularly those who currently prescribe heparin frequently where more wary of it. <!-- expand on this!!!! --></p>
-<!-- how did the doses differ in part 1 and part 2 of the survey.  -->
+In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect the user struggling to understand how to use the tool.</p>
+<p>As for the reasoning for adjusting doses, they vary greatly as can be seen in the appendix in Table . Those who choose to adjust towards the model values generally expressed trust in the model, while some users, in particularly those who currently prescribe heparin frequently where more wary of it. Some users explained they wanted to adjust the infusion rate based features that were considered in the model, or that they would want to adjust based on Anti-Xa Assay (an assay designed to monitor anticoagulant therapy.) Others expressed that their initial dose was close enough, and that they preferred round numbers, since dosing in non-integer units is not always possible. <!-- expand on this!!!! --></p>
 <!-- ## Time differences -->
 <!-- time difference in part 1 and part 2.   -->
 <!-- maybe add some graphs here.   -->
-<h2 id="user-reported-confidence"><span class="header-section-number">5.4</span> User Reported Confidence</h2>
-<p>Eight of the nine participants reported they felt more confident dosing with the tool than without. One participant said it did not affect their confidence.</p>
-<!-- add some type of closing or transition ??? -->
+<h2 id="user-feedback"><span class="header-section-number">5.4</span> User Feedback</h2>
+<p>Eight of the nine participants reported they felt more confident dosing with the tool than without. One participant said it did not affect their confidence. Although in general users reported greater confidence with the tool, the majority expressed concern with adopting it due to a lack of understanding of the models. As one participant noted the models are &quot;a bit of a 'black box'.&quot; Other users noted that they were concerned the tool was not adjusting for some specific complications. Another user noted they were concerned about adopting it given there has not been a validation trial for the technique. These concerns and others will be addressed in the following section. <!-- add some type of closing or transition ??? --></p>
 <!-- ## User Comments  -->
 <!-- just state comments here - address them more fully in the next section. -->
 <!-- requesting more information  -->
@@ -494,28 +489,28 @@ Median Dose & 18 & 20 & 9\% & 18 & 14 & 23\% & 13 & 16 & 17\% & 15 & 15 & 21\% &
 <!-- things that weren't expected.   -->
 <!-- other things of note   -->
 <!-- blank lines at end -necessary for template -->
-<h1 id="retrospective-next-steps"><span class="header-section-number">6</span> Retrospective / Next Steps</h1>
+<h1 id="retrospective-next-steps"><span class="header-section-number">6</span> Retrospective, Next Steps</h1>
 <!--
 After the introductory chapter, it seems fairly common to 
 include a chapter that reviews the literature and 
 introduces methodology used throughout the thesis.
 -->
-<h2 id="shortcomings-in-the-survey"><span class="header-section-number">6.1</span> Shortcomings in the Survey</h2>
-<ul>
-<li>errors<br />
-</li>
-<li>lack of data</li>
-<li>better explanation of how the model/logistic regression works. explain what features are being used in the prediction and what aren't. suggest a potential user interface that gives weights to things e.g. The patients suggested dose deviates from a baseline dose curve due to the patients ethnicity and creatinine and mean SOFA scores.</li>
-</ul>
-<h2 id="places-for-future-research"><span class="header-section-number">6.2</span> Places for Future Research</h2>
-<p>how did the doses differ in part 1 and part 2 of the survey.</p>
-<h2 id="implementation-differences-in-future-version"><span class="header-section-number">6.3</span> Implementation Differences in future version</h2>
-<ul>
-<li>transfer model to device so it can do queries more quickly</li>
-<li>instead of static data source have real medical database</li>
-<li>easily interchangeable models</li>
-<li>better analytics</li>
-</ul>
+<h2 id="challenges"><span class="header-section-number">6.1</span> Challenges</h2>
+<p>Although most participants expressed that the dosing tool gave them greater confidence, the majority also had reservations with adopting the tool in their practice. Their common concern involved their understanding of how the tool worked. This is concern good, as it reflects a conservative approach to experimenting on best practices. One reason for their lack of understanding can be attributed to the nature of this study, in that participants completed the survey on their own time and were given no incentives for completing the survey. As such, many users may have skimmed the system explanation quickly.<br />
+Additionally, the technique used for dosing, although not terribly complex, is not trivial to understand. Physicians in general cannot be asked to learn how a logistic regression works or how these models are built. Simply speaking, their time is very valuable and limited. Thus, experimental techniques need to be validated in formal clinical setting with physicians who are invested in understanding and participating in a trial of the new tools. Another concern expressed was that the tool did not consider other potential features when dosing patients. Although these features can be added overtime, as the data becomes available and coded appropriately, this concern speaks to the greater issue of user interaction with the model. In its current state the standalone calculator allows physicians to view the weight-only model and the all features model. This gives them a better understanding of how these features change the therapeutic curve. Future versions of this tool should allow the user to enable and disable certain a given feature, so they can have a better understanding of the effects of the feature on the model outcome. This understanding could potentially come in the form of additional visualizations like the original graph or arguably better in the form of written descriptions, e.g. &quot;due to SOFA score causes a deviation of 3% from normal dosing.&quot; The initial version of this project included a crude nearest neighbor visualization, but that feature was not incorporated in the final version due to time limitations. Increasing user interaction with the tool will hopefully address some knowledge and trust issues with the current system.</p>
+<h2 id="shortcomings-in-the-survey"><span class="header-section-number">6.2</span> Shortcomings in the Survey</h2>
+<p>This study has no shortage of problems. The problems generally come from a lack of resources, in terms of time and money. A funded study would allow for a greater number of participants with specific domain expertise. Additionally the participant selection process would not be limited to friends of the researchers, which may have skewed the results. Funding would also allow for time for researchers to work with participants to better understand the model. Given the problems with the survey, and limited number of participants, the results are still very valuable as they clearly reveal areas for future improvement in the system.</p>
+<!-- ## Places for Future Research -->
+<!-- how did the doses differ in part 1 and part 2 of the survey.  -->
+<h2 id="implementation-differences-in-future-versions"><span class="header-section-number">6.3</span> Implementation Differences in Future Versions</h2>
+<p>The experimental nature of this project has lead to a software implementation that is limited in several ways. It served its primary purpose as a tool for a research study fairly well, but it is not &quot;real world&quot; ready in its current form. In future versions we'd like to see improved logging, system documentation, automated unit testing on builds, and better scaling performance (possibly utilizing redis). Additionally, the overall design should be more modular, such that it is easier to try out and compare different candidate models (e.g. Ensemble Learning, Neural Networks, SVMs, etc.) on different drugs. Automated testing could even run trial comparisons and compute statistics on models. From a data processing perspective, an entire subsystem should be designed and built for selecting data from the medical records database and translating it into a suitable form for models. There should also be tools for validating the cohort selection. This is not a trivial task when working with a specific medical record database, and becomes much more challenging when attempting to interface with other databases. Defining the generic interface used for selecting the cohort from the database will be challenging. Finally the data will also need to be validated and then translated (coded) to appropriate values for a given model. On the frontend, user analytics could be improved, as it would be ideal to know more about the user and how they interact on a per-click basis on the site. One final improvement on the client would be modifying the data model, such that instead of requesting an estimate for a specific patient, it requests a generic model that has been precomputed on the sever. Then the user can manually modify features and the estimated probability curves are computed client side. This should allow for a much more responsive experience for the user, providing them instantaneous feedback for each feature change made, instead requiring a request to have the server compute and return the results. These calculations could be done in a separate thread using web workers. Additionally, by implementing the predictions client side, patient data does not need to be transfered to an external server (increases HIPAA compliance), and the client can be fully functional offline which is ideal for low resource environments such as developing countries.</p>
+<!-- documented, tested, scalable, maintainable/easy to modify models, design well though out -->
+<!-- better build system -->
+<!-- better analytics/guidelines -->
+<!-- - transfer model to device so it can do queries more quickly -->
+<!-- - instead of static data source have real medical database -->
+<!-- - easily interchangeable models -->
+<!-- - better analytics  -->
 <!-- blank lines at end -necessary for template -->
 <h1 id="conclusion"><span class="header-section-number">7</span> Conclusion</h1>
 <!--
@@ -646,26 +641,33 @@ Unordered sub-list.
  - - - dfdf
 - - - - also some way  -->
 
-<h1 id="appendix-2-application-user-interface" class="unnumbered">Appendix 2: Application User Interface</h1>
-<!-- This could be a list of papers by the author for example  -->
-<!-- Also tutorials/people/stack overflow that was helpful.  -->
-<!-- tom's markdown -> latex  -->
-<p>Below are selected screenshots of the calculator application and survey application in use. You encouraged to try them out yourself directly at <a href="https://hepstack-stage.herokuapp.com/" class="uri">https://hepstack-stage.herokuapp.com/</a>.</p>
-<h2 id="calculator-interface"><span class="header-section-number">7.3</span> Calculator Interface</h2>
-
-<h2 id="survey-interface"><span class="header-section-number">7.4</span> Survey Interface</h2>
-
-<!-- [Link](https://hepstack-stage.herokuapp.com/#/presurvey) -->
-
-
-<!-- [Link](https://hepstack-stage.herokuapp.com/#/part3info) -->
-
-<!-- \newpage -->
-<!-- [Link](https://hepstack-stage.herokuapp.com/#/part3) -->
-
-<!--  [Link](https://hepstack-stage.herokuapp.com/#/part3) -->
-
-<!-- [Link](https://hepstack-stage.herokuapp.com/#/postsurvey) -->
+<h1 id="appendix-3-research-resources" class="unnumbered">Appendix 3: Research Resources</h1>
+<p>Below is a list of tools I used while creating the application:</p>
+<ul>
+<li>Web App Tools: Grunt, Bower, NPM</li>
+<li>Typesetting: <a href="https://github.com/tompollard/phd_thesis_markdown">Tom Pollard's Markdown to Latex Scripts</a></li>
+</ul>
+<p>Below is a list of tutorials and resources I found helpful while creating the application:</p>
+<ul>
+<li>Sahil Diwan's <a href="http://blog.sahildiwan.com/posts/flask-and-postgresql-app-deployed-on-heroku/">Making a Flask app using a PostgreSQL database and deploying to Heroku</a></li>
+<li>Yuval Adam's <a href="http://blog.y3xz.com/blog/2012/08/16/flask-and-postgresql-on-heroku">Flask and PostgreSQL on Heroku</a></li>
+<li>Real Python's <a href="https://realpython.com/blog/python/flask-by-example-integrating-flask-and-angularjs/">Flask by Example - Integrating Flask and AngularJS</a></li>
+<li><a href="https://mimic.physionet.org/about/mimic/">MIMIC-III Critical Care Database Documentation</a></li>
+<li>Randy Olson's <a href="https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects">data analysis and machine learning projects</a></li>
+</ul>
+<p>Additionally, Google, StackOverflow and the Angular.js documentation were incredibly helpful. <!-- 
+* fruits
+    + apples
+        - macintosh
+        - red delicious
+    + pears
+    + peaches
+* fruits
+    + apples
+        - macintosh
+        - red delicious
+    + pears
+    + peaches --> <!-- This could be a list of papers by the author for example  --> <!-- Also tutorials/people/stack overflow that was helpful.  --> <!-- tom's markdown -> latex  --> <!-- Below are selected screenshots of the calculator application and survey application in use. You encouraged to try them out yourself directly at [https://hepstack-stage.herokuapp.com/](https://hepstack-stage.herokuapp.com/). --></p>
 
 <!-- 
 Do not edit this page.

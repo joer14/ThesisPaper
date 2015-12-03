@@ -12,7 +12,7 @@ introduces methodology used throughout the thesis.
 Participants adjusted their doses 72% of time after reviewing the model, which resulted in a higher probability of therapeutic outcome in 82% of the adjustments. Additionally, participants reported greater confidence when using the tool but also expressed some hesitation with adopting the tool, often due to a lack of understanding of the underlying models. More information follows. Access to the extended survey results can be found in [Appendix 1](#appendix-1-full-survey-results).
 
 ## Participant Profiles
-In total nine participants, all medical doctors completed the survey. They range in experience from 4 to 32 years practicing. Of the nine, one participant is a practicing physician in Ethiopia, and the rest practiced in the United States. One participant completed the study from a mobile device and the others from a traditional laptop or desktop computer. Five of the nine reported that they frequently prescribe heparin (at least once a week) in their current position. One participant reported prescribing it infrequently (once a month), two reported prescribing it rarely and one reported prescribing never. All participants reported that in sometime in the past they prescribed it frequently. Participant specialties can be found in Table \ref{table:pre1}. Although nine participants took the survey, one participant's infusion rates were disqualified from the dataset because they were 100 times greater than the mean. Their comments were still kept for analysis.
+In total nine participants, all medical doctors completed the survey. They range in experience from 4 to 32 years practicing. Of the nine, one participant is a practicing physician in Ethiopia, and the rest practice in the United States. One participant completed the study from a mobile device and the others from a traditional laptop or desktop computer. Five of the nine reported that they frequently prescribe heparin (at least once a week) in their current position. One participant reported prescribing it infrequently (once a month), two reported prescribing it rarely and one reported prescribing never. All participants reported that in sometime in the past they prescribed it frequently. The participant medical specialties can be found in Table \ref{table:pre1}, but ranged from hematopathology to neuroendovascular surgery. Although nine participants took the survey, one participant's infusion rates were disqualified from the data analysis because they were 100 times greater than the mean. Their comments were still kept for additional analysis.
 
 
 
@@ -49,23 +49,19 @@ Median Dose & 18 & 20 & 18 & 14 & 13 & 16 & 15 & 15 & 16 & 18 \\ \hline
 ## Dose Differences
 
 Each of the eight participants prescribed heparin twice to five different patients, yielding a total of 80 infusion rates. In Table \ref{table:ir}, for each patient there is a suggested optimal infusion rate (IR) in the top header. This is the number that was displayed to the user after they entered their initial infusion rate *IR1*. *IR2* is the value they prescribed after viewing the optimal dosage curve and the suggested infusion rate.  
-In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect that specific user experiencing difficulty understanding the tool.
+In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect the user struggling to understand how to use the tool.
 
-As for the reasoning for adjusting doses they vary greatly as can be seen in Table \ref{table:YESNO}. Those who choose to adjust towards the model values generally expressed trust in the model, while some users, in particularly those who currently prescribe heparin frequently where more wary of it. 
+As for the reasoning for adjusting doses, they vary greatly as can be seen in the appendix in Table \ref{table:YESNO}. Those who choose to adjust towards the model values generally expressed trust in the model, while some users, in particularly those who currently prescribe heparin frequently where more wary of it. Some users explained they wanted to adjust the infusion rate based features that were considered in the model, or that they would want to adjust based on Anti-Xa Assay (an assay designed to monitor anticoagulant therapy.) Others expressed that their initial dose was close enough, and that they preferred round numbers, since dosing in non-integer units is not always possible. 
 <!-- expand on this!!!! -->
-
-
-<!-- how did the doses differ in part 1 and part 2 of the survey.  -->
 
 
 <!-- ## Time differences -->
 
 <!-- time difference in part 1 and part 2.   -->
 <!-- maybe add some graphs here.   -->
-## User Reported Confidence
+## User Feedback
 
-Eight of the nine participants reported they felt more confident dosing with the tool than without. One participant said it did not affect their confidence. 
-
+Eight of the nine participants reported they felt more confident dosing with the tool than without. One participant said it did not affect their confidence. Although in general users reported greater confidence with the tool, the majority expressed concern with adopting it due to a lack of understanding of the models. As one participant noted the models are "a bit of a 'black box'." Other users noted that they were concerned the tool was not adjusting for some specific complications. Another user noted they were concerned about adopting it given there has not been a validation trial for the technique. These concerns and others will be addressed in the following section.
 <!-- add some type of closing or transition ??? -->
 
 

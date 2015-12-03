@@ -71,7 +71,7 @@ talk about how I used the maximization function to maximize the probability of t
 
 The frontend for the application was built in Angular.js. Angular.js is client-side MVC (Model View Controller) framework that was chosen for it's strengths in quick prototyping. The user interface was built on Twitter Bootstrap, as it was familiar to the authors, is relatively easy to use and offers built in responsive design. Additionally, it has many CSS components such as nice forms and progress bars that are useful for the design.  
 For graphing the D3.js, NV-D3 and Angular-nvd3 libraries were used which enables inserting graphs using simple directives. Figure \ref{fig:calc_graph} shows an example output of the standalone calculator as seen in [Appendix 2](#appendix-2-application-user-interface) or 
-[online](https://hepstack-stage.herokuapp.com/#/calc). 
+[online](https://hepstack-stage.herokuapp.com/#/calc). The two prominent dots represent the optimal doses for each model. Note that in this example, the weight-only model predicts that the probability that the patient will reach therapeutic state is higher than the all features model.
 
 <!-- explain this is a standalone version
 include screen shot maybe? 
