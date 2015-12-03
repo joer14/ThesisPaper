@@ -25,7 +25,7 @@ Due to financial and scope limitations, we could not compensate participants for
 
 ## Architecture and Implementation
 
-The survey was implemented using the same technological stack as the calculator (Angular.js and Bootstrap on the frontend). By utilizing a SPA (single page application) methodology we were able to quickly iterate and make many changes over time. There were several candidate versions of the survey developed over time, and tested with domain experts for feedback. The final iteration allows for the most direct input of comments from doctors, instead of relying on proxy metrics such as time to complete cases that are similar with and without the heparin calculator. 
+The survey was implemented using the same technological stack as the calculator (Angular.js and Bootstrap on the frontend, Python and Flask on the backend). By utilizing a SPA (single page application) methodology we were able to quickly iterate and make many revisions. There were several candidate versions of the survey developed and tested with domain experts for feedback. The final iteration allows for the most direct input of comments from doctors, instead of relying on proxy metrics such as time to complete cases that are similar too each other. 
 
 <!-- talk about the stack, tools used etc. how it was implemented. user experience.   -->
 <!-- blank lines at end -necessary for template -->

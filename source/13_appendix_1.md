@@ -24,12 +24,10 @@ This could be a list of papers by the author for example
 6. Have you ever worked in an ICU? If so, to what extent?
 	- (e.g During my residency I had 2 rotations lasting roughly 10 weeks each in different ICUs.) 
 
-
-
 \begin{table}[H]
 \centering
 \caption{Presurvey Results Questions 1-5}
-\label{my-label}
+\label{table:pre1}
 \begin{adjustbox}{max width=\textwidth}
 \begin{tabulary}{1.5\textwidth}{|L|LLLLL|}
 \hline
@@ -50,7 +48,7 @@ Participant & Credential & Specialty & Years Practicing & Current Heparin Experi
 \centering
 \begin{adjustbox}{max width=\textwidth}
 \caption{Presurvey Results Question 6}
-\label{my-label}
+\label{table:pre2}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 Participant & ICU Experience \\ \hline
@@ -86,8 +84,8 @@ Participant & ICU Experience \\ \hline
 2 & More & You are stepping out of the realm of current standard practice. You are relying on 1) the data used in the model reflecting the patient group seen in your practice, 2) the statistical methods used being the most appropriate. \\ \hline
 3 & More & A bit of a 'black box' - I would want to see more about validation before fully implementing \\ \hline
 4 & Equally & would like to know more about the stats and the mechanisms that are responsible for the predictions \\ \hline
-5 & More & Lack of prospective trial using this method to provide validation of this tool \\
-6 & More & Still have to take in consideration other complications with regard to thrombus formation, bleeding risk, clearance (renal injury), other coagulation factors, etc. \\
+5 & More & Lack of prospective trial using this method to provide validation of this tool \\ \hline
+6 & More & Still have to take in consideration other complications with regard to thrombus formation, bleeding risk, clearance (renal injury), other coagulation factors, etc. \\ \hline
 7 & More & The fractions in calculation makes hard to adminster we could round up for example 18.2 to 18 that way it would be more applicable \\ \hline
 8 & More & None \\ \hline
 9 & More & None; very helpful \\ \hline

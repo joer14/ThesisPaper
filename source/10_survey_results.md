@@ -5,30 +5,53 @@ After the introductory chapter, it seems fairly common to
 include a chapter that reviews the literature and 
 introduces methodology used throughout the thesis.
 -->
-## Cumulative Results
+
+<!-- maybe add a little intro... short description of primary findings -->
+## Primary Findings
+
+Participants adjusted their doses 72% of time after reviewing the model, which resulted in a higher probability of therapeutic outcome in 82% of the adjustments. Additionally, participants reported greater confidence when using the tool but also expressed some hesitation with adopting the tool, often due to a lack of understanding of the underlying models. For more detailed information continue reading. Access to the extended survey results can be found in [Appendix 1](#appendix-1-full-survey-results).
+
+## Participants Profiles
+In total nine participants, all medical doctors completed the survey. They range in experience from 4 to 32 years practicing. Of the nine, one participant is a practicing physician in Ethiopia, and the rest practiced in the United States. One participant completed the study from a mobile device and the others from a traditional laptop or desktop computer. Five of the nine reported that they frequently prescribe heparin (at least once a week) in their current position. One participant reported prescribing it infrequently (once a month), two reported prescribing it rarely and one reported prescribing never. All participants reported that in sometime in the past they prescribed it frequently. Participant specialties can be found in Table \ref{table:pre1}. Although nine participants took the survey, one participant's infusion rates were disqualified from the dataset because they were 100 times greater than the mean. Their comments were still kept for analysis.
+
+
+
+<!-- ## Cumulative Results -->
 
 <!-- how many difference people took survey, specialties, time since last dosed heparin.  -->
 
 ## Dose differences
 
+Each of the eight participants prescribed heparin twice to five different patients, yielding a total of 80 infusion rates. In Table \ref{table:ir}, for each patient there is a suggested optimal infusion rate (IR) in the header. This is the number that was displayed to the user after they entered their initial infusion rate *IR1*. *IR2* is the value they prescribed after viewing the optimal dosage curve and the suggested infusion rate.  
+In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect that specific user experiencing difficulty understanding the tool.   
 <!-- how did the doses differ in part 1 and part 2 of the survey.  -->
+
 
 ## Time differences
 
 <!-- time difference in part 1 and part 2.   -->
 <!-- maybe add some graphs here.   -->
 
-## Understanding/Confidence in Results
+## User Reported Confidence
+
+## User Comments 
+<!-- just state comments here - address them more fully in the next section. -->
+<!-- requesting more information  -->
+<!-- round off the drug -->
+<!-- understanding -->
+<!-- add reasons why they did and did not change their dose -->
+
+
 
 <!-- .... -->
 
 ## Other results
 
-Something about other results... blah blah blah. 
+<!-- Something about other results... blah blah blah.  -->
 \begin{table}[H]
 \centering
-\caption{My caption}
-\label{my-label}
+\caption{Infusion rates before after optimal dosage model was displayed. IR1 refers to the initial infusion rate, and IR2 refers the infusion rate chosen after viewing the model.}
+\label{table:ir}
 \begin{adjustbox}{max width=\textwidth}
 \begin{tabulary}{15cm}{|L|RR|RR|RR|RR|RR|}
 \hline
