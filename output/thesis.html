@@ -185,7 +185,7 @@
                 <li><a href="#dose-differences"><span class="toc-section-number">5.3</span> Dose Differences</a></li>
                 <li><a href="#user-feedback"><span class="toc-section-number">5.4</span> User Feedback</a></li>
                 </ul></li>
-                <li><a href="#retrospective-next-steps"><span class="toc-section-number">6</span> Retrospective, Next Steps</a><ul>
+                <li><a href="#retrospective-and-next-steps"><span class="toc-section-number">6</span> Retrospective and Next Steps</a><ul>
                 <li><a href="#challenges"><span class="toc-section-number">6.1</span> Challenges</a></li>
                 <li><a href="#shortcomings-in-the-survey"><span class="toc-section-number">6.2</span> Shortcomings in the Survey</a></li>
                 <li><a href="#implementation-differences-in-future-versions"><span class="toc-section-number">6.3</span> Implementation Differences in Future Versions</a></li>
@@ -282,7 +282,7 @@ To include a reference, add the citation key shown in the references.bib file.
 This is a brief outline of what went into each chapter. **Chapter 1** gives a background on duis tempus justo quis arcu consectetur sollicitudin.  **Chapter 2** discusses morbi sollicitudin gravida tellus in maximus.  **Chapter 3** discusses vestibulum eleifend turpis id turpis sollicitudin aliquet.  **Chapter 4** shows how phasellus gravida non ex id aliquet. Proin faucibus nibh sit amet augue blandit varius. -->
 <h1 id="background"><span class="header-section-number">2</span> Background</h1>
 <h2 id="traditional-dosing-of-heparin"><span class="header-section-number">2.1</span> Traditional Dosing of Heparin</h2>
-<p>Heparin is an anticoagulant medication administered intravenously to patients with blood clots. Specifically it is often used for strokes, pulmonary embolism (blockage in an artery in the lung), acute coronary syndrome (e.g. heart attack), and many other conditions. The general protocol for dosing heparin is to initially order baseline lab results for the patient. These values combined with context of the patients condition allow a doctor to determine the infusion rate and if a bolus (a single large initial dose) is required. The primary metric used for monitoring patient progress is activated partial thromboplastin time (APTT). After the infusion is started the patient is monitored and the dose is adjust periodically. Most often new labs are ordered every 6 hours [citation to UW and Beth Israel].</p>
+<p>Heparin is an anticoagulant medication administered intravenously to patients with blood clots. Specifically it is often used for strokes, pulmonary embolism (blockage in an artery in the lung), acute coronary syndrome (e.g. heart attack), and many other conditions. The general protocol for dosing heparin is to initially order baseline lab results for the patient. These values combined with context of the patients condition allow a doctor to determine the infusion rate and if a bolus (a single large initial dose) is required. The primary metric used for monitoring patient progress is activated partial thromboplastin time (APTT). After the infusion is started the patient is monitored and the dose is adjust periodically. Most often new labs are ordered every 6 hours <span class="citation">(Lisa Gryttenholm 2004)</span>, <span class="citation">(Washington Pharmacy Services 2014)</span>.</p>
 <!--
 After the introductory chapter, it seems fairly common to 
 include a chapter that reviews the literature and 
@@ -300,7 +300,7 @@ introduces methodology used throughout the thesis.
 <p>The objective of the model was to determine the probability that patient would end in one of three categories: sub-therapeutic, therapeutic, or supra-therapeutic. A patient can by definition only be in one category at a time. This lead Ghassemi et al. to the following equation:<br />
 (1) <span class="math inline">1 = <em>P</em>(<em>s</em><em>u</em><em>b</em> − <em>t</em><em>h</em><em>e</em><em>r</em><em>a</em><em>p</em><em>e</em><em>u</em><em>t</em><em>i</em><em>c</em>)+<em>P</em>(<em>t</em><em>h</em><em>e</em><em>r</em><em>a</em><em>p</em><em>e</em><em>u</em><em>t</em><em>i</em><em>c</em>)+<em>P</em>(<em>s</em><em>u</em><em>p</em><em>r</em><em>a</em> − <em>t</em><em>h</em><em>e</em><em>r</em><em>a</em><em>p</em><em>e</em><em>u</em><em>t</em><em>i</em><em>c</em>)</span></p>
 <p>The challenge of using logistic regression to predict therapeutic outcomes is that the probability of a therapeutic outcome is not a strictly monotonic function. So using logistic regression directly to predict P(therapeutic) will not work. That being said, the probability of sub-therapeutic and supra-therapeutic outcomes are monotonically decreasing and increasing functions respectively. Given these properties, we can use multinomial logistic regression to determine functions for sub-therapeutic and supra-therapeutic aPTT. Using equation 1 we can then determine the probability of a therapeutic outcome.<br />
-Although at this point a case been has made that multinomial logistic regression may be an appropriate tool, there are a few considerations the Ghassemi et al. took with regards to the form of regression. There are many forms of multinomial logistic regression with subtle but important differences. There is a natural order to the classifications (sub-therapeutic, therapeutic, supra-therapeutic), so ordinal logistic regression could be considered. The challenge with ordinal logistic regression, however, is that it makes the assumption of proportional odds, so regression intercept terms vary across classes while regression coefficients are shared across classes. In the words of the original authors <em>&quot;it assumes that explanatory features maintain identical effects across varying ranges of the outcome&quot;</em>[citation appendix]. Instead the ordinal regression they instead used a modified version of standard multinomial logistic regression, which utilized a flexible reference category. That is instead of using a single class to predict the outcome that is not being modeled, they used all classes. So when modeling supra-therapeutic aPTT, standard multinomial logistic regression would reference either therapeutic or sub-therapeutic aPTT classes, while their approach referenced both classes. This choice was demonstrated to have significant effects on the validity of their models [citation to appendix, section 2].</p>
+At this point a case been has made that multinomial logistic regression may be an appropriate tool, but there are a few considerations that Ghassemi et al. took with regards to choosing the form of regression. There are many forms of multinomial logistic regression with subtle but important differences. There is a natural order to the classifications (sub-therapeutic, therapeutic, supra-therapeutic), so ordinal logistic regression could be considered. The challenge with ordinal logistic regression, however, is that it makes the assumption of proportional odds, so regression intercept terms vary across classes while regression coefficients are shared across classes. In the words of the original authors <em>&quot;it assumes that explanatory features maintain identical effects across varying ranges of the outcome&quot;</em>[citation appendix]. Instead the ordinal regression they instead used a modified version of standard multinomial logistic regression, which utilized a flexible reference category. That is instead of using a single class to predict the outcome that is not being modeled, they used all classes. So when modeling supra-therapeutic aPTT, standard multinomial logistic regression would reference either therapeutic or sub-therapeutic aPTT classes, while their approach referenced both classes. This choice was demonstrated to have significant effects on the validity of their models [citation to appendix, section 2].</p>
 <!-- To predict the probability of a therapeutic outcome  -->
 <!-- explain different techniques that could be used (svm, logistic regression, others listed in their paper)   -->
 <!-- then explain that mohammad et al chose to use logistic regression because it had a natural relationship with this...   -->
@@ -310,7 +310,7 @@ Although at this point a case been has made that multinomial logistic regression
 <h3 id="feature-selection"><span class="header-section-number">2.2.2</span> Feature Selection</h3>
 <p>There are innumerable potential features one could consider as predictors of patient outcome. In their paper, Ghassemi et al. determined the salient features as follows: age, SOFA score, Elixhauser, Heparin dose, APTT Measurement time, Creatinine, Ethnicity, Gender, ICU type, presence of pulmonary embolism, obesity, presence of end stage renal failure.</p>
 <h2 id="summary-of-prior-work"><span class="header-section-number">2.3</span> Summary of Prior Work</h2>
-<p>The original paper and associated appendix document the efforts taken to validate the models. To summarize, they partitioned their dataset, dedicating 70% to training and 30% for validation. They then compared the calculated the predicted classification for each patient using both a full featured model and a weight-only model. The full featured model was more accurate than the weight-only approach as measured by Volume Under the Receiver Operating Characteristic Surface (the multiple class version of Area Under Receiver Operating Characteristic Curve), with values of 0.48 vs 0.42 [citation].<br />
+<p>The original paper and associated appendix document the efforts taken to validate the models. To summarize, they partitioned their dataset, dedicating 70% to training and 30% for validation. They then compared the calculated the predicted classification for each patient using both a full featured model and a weight-only model. The full featured model was more accurate than the weight-only approach as measured by Volume Under the Receiver Operating Characteristic Surface (the multiple class version of Area Under Receiver Operating Characteristic Curve), with values of 0.48 vs 0.42 <span class="citation">(Ferri et al. 2003)</span>.<br />
 In closing, they noted that a randomized controlled trial would be necessary to determine if this mechanism is more effective for dosing. This thesis project represents the initial steps towards this trial.</p>
 <!-- Summary of the results from their paper.  It is better than weight based system alone.   -->
 <!-- They weren't able to test if it was better than an actual doctor because you'd need to have the system in place to do that. That is where this system/survey comes into play.   -->
@@ -422,88 +422,26 @@ introduces methodology used throughout the thesis.
 <h2 id="dose-differences"><span class="header-section-number">5.3</span> Dose Differences</h2>
 <p>Each of the eight participants prescribed heparin twice to five different patients, yielding a total of 80 infusion rates. In Table , for each patient there is a suggested optimal infusion rate (IR) in the top header. This is the number that was displayed to the user after they entered their initial infusion rate <em>IR1</em>. <em>IR2</em> is the value they prescribed after viewing the optimal dosage curve and the suggested infusion rate.<br />
 In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect the user struggling to understand how to use the tool.</p>
-<p>As for the reasoning for adjusting doses, they vary greatly as can be seen in the appendix in Table . Those who choose to adjust towards the model values generally expressed trust in the model, while some users, in particularly those who currently prescribe heparin frequently where more wary of it. Some users explained they wanted to adjust the infusion rate based features that were considered in the model, or that they would want to adjust based on Anti-Xa Assay (an assay designed to monitor anticoagulant therapy.) Others expressed that their initial dose was close enough, and that they preferred round numbers, since dosing in non-integer units is not always possible. <!-- expand on this!!!! --></p>
-<!-- ## Time differences -->
-<!-- time difference in part 1 and part 2.   -->
-<!-- maybe add some graphs here.   -->
+<p>As for the reasoning for adjusting doses, they vary greatly as can be seen in the appendix in Table . Those who choose to adjust towards the model values generally expressed trust in the model, while some users, in particularly those who currently prescribe heparin frequently where more wary of it. Some users explained they wanted to adjust the infusion rate based features that were considered in the model, or that they would want to adjust based on Anti-Xa Assay (an assay designed to monitor anticoagulant therapy <span class="citation">(Reka G Szigeti 2014)</span>.) Others expressed that their initial dose was close enough, and that they preferred round numbers, since dosing in non-integer units is not always possible.</p>
 <h2 id="user-feedback"><span class="header-section-number">5.4</span> User Feedback</h2>
-<p>Eight of the nine participants reported they felt more confident dosing with the tool than without. One participant said it did not affect their confidence. Although in general users reported greater confidence with the tool, the majority expressed concern with adopting it due to a lack of understanding of the models. As one participant noted the models are &quot;a bit of a 'black box'.&quot; Other users noted that they were concerned the tool was not adjusting for some specific complications. Another user noted they were concerned about adopting it given there has not been a validation trial for the technique. These concerns and others will be addressed in the following section. <!-- add some type of closing or transition ??? --></p>
-<!-- ## User Comments  -->
-<!-- just state comments here - address them more fully in the next section. -->
-<!-- requesting more information  -->
-<pre><code>&lt;!-- understanding --&gt;</code></pre>
-<!-- round off the drug -->
-<!-- .... -->
-<!-- ## Other results -->
-<!-- Something about other results... blah blah blah.  -->
-<!-- 
-\begin{table}
-\centering
-\caption{My caption}
-\label{my-label}
-% \begin{adjustbox}{max width=\textwidth}
-% \setlength{\tabcolsep}{1pt}
-% \setlength{\extrarowheight}{1.5pt}
-\begin{tabulary}{17cm}{L|LCR|LCR|LCR|LCR|LCR}
-\hline
- &\multicolumn{3}{l|}{Patient 1}&\multicolumn{3}{l|}{Patient 2}&\multicolumn{3}{l|}{Patient 3}&\multicolumn{3}{l|}{Patient 4}&\multicolumn{3}{l|}{Patient 5}\\
-\cline{2-16}
-% \begin{tabularx}{0.5\textwidth}{|l|XXX|XXX|XXX|XXX|XXX|}
-%                            & Patient 1 &      &         & Patient 2 &      &         & Patient 3 &      &         & Patient 4 &      &         & Patient 5 &      &         \\
-% Suggested IR               & 19.7      &      &         & 13.3      &      &         & 15.9      &      &         & 14.4      &      &         & 17.5      &      &         \\ \hline
-%                            Participant & IR 1      & IR 2 & \% Diff & IR 1      & IR 2 & \% Diff & IR 1      & IR 2 & \% Diff & IR 1      & IR 2 & \% Diff & IR 1      & IR 2 & \% Diff \\ \hline
-% 1 & 18 & 25 & 38.9\% & 18 & 19 & 5.6\% & 18 & 20 & 11.1\% & 18 & 26 & 44.4\% & 20 & 24 & 20.0\% \\
-Suggested IR (Units/Kg/HR) & 19.7 &  &  & 13.3 &  &  & 15.9 &  &  & 14.4 &  &  & 17.5 &  &  \\ \hline
-Participant & IR 1 & IR 2 & \% Diff & IR 1 & IR 2 & \% Diff & IR 1 & IR 2 & \% Diff & IR 1 & IR 2 & \% Diff & IR 1 & IR 2 & \% Diff \\ \hline
-1 & 18 & 25 & 39\% & 18 & 19 & 6\% & 18 & 20 & 11\% & 18 & 26 & 44\% & 20 & 24 & 20\% \\
-2 & 18 & 19.8 & 10\% & 18 & 13.9 & 23\% & 13 & 16 & 23\% & 12 & 14.7 & 23\% & 13 & 17.6 & 35\% \\
-3 & 18 & 20.3 & 13\% & 80 & 14.1 & 82\% & 18 & 16.4 & 9\% & 18 & 15 & 17\% & 18 & 18 & 0\% \\
-4 & 12 & 12 & 0\% & 15 & 15 & 0\% & 12 & 15.9 & 33\% & 15 & 15 & 0\% & 12 & 17.3 & 44\% \\
-5 & 18 & 19.6 & 9\% & 18 & 13.7 & 24\% & 12 & 15.9 & 33\% & 18 & 14.5 & 19\% & 12 & 17.4 & 45\% \\
-6 & 18 & 18 & 0\% & 18 & 18 & 0\% & 13 & 13 & 0\% & 12 & 14.8 & 23\% & 0 & 0 & 0\% \\
-7 & 18 & 19.6 & 9\% & 18 & 13.6 & 24\% & 17 & 16 & 6\% & 15 & 15 & 0\% & 18 & 18 & 0\% \\
-8 & 18 & 19.7 & 9\% & 18 & 13.8 & 23\% & 13 & 16 & 23\% & 12 & 14.7 & 23\% & 18 & 18 & 0\% \\
-Min Dose & 12 & 12 & 0\% & 15 & 13.6 & 0\% & 12 & 13 & 0\% & 12 & 14.5 & 0\% & 0 & 0 & 0\% \\
-Max Dose & 18 & 25 & 39\% & 80 & 19 & 82\% & 18 & 20 & 33\% & 18 & 26 & 44\% & 20 & 24 & 45\% \\
-Standard Deviation & 2 & 4 & 12\% & 22 & 2 & 26\% & 3 & 2 & 12\% & 3 & 4 & 14\% & 6 & 7 & 21\% \\
-Mean Dose & 17 & 19 & 11\% & 25 & 15 & 23\% & 15 & 16 & 17\% & 15 & 16 & 19\% & 14 & 16 & 18\% \\
-Median Dose & 18 & 20 & 9\% & 18 & 14 & 23\% & 13 & 16 & 17\% & 15 & 15 & 21\% & 16 & 18 & 10\% \\
-% Mean Dose Change / Patient &  &  & 10\% &  &  & 20\% &  &  & 15\% &  &  & 17\% &  &  & 16\% \\
-% \end{tabularx}
-\end{tabulary}
-% \end{adjustbox}
-\end{table}
-
-\begin{tabular}{|l||l|l||l|l|}
-\hline
- &\multicolumn{2}{l|}{Singular}&\multicolumn{2}{l|}{Plural}\\
-\cline{2-5}
- &English&\textbf{Gaeilge}&English&\textbf{Gaeilge}\\
-\hline\hline
-1st Person&at me&\textbf{agam}&at us&\textbf{againn}\\
-2nd Person&at you&\textbf{agat}&at you&\textbf{agaibh}\\
-3rd Person&at him&\textbf{aige}&at them&\textbf{acu}\\
- &at her&\textbf{aici}& & \\
-\hline
-\end{tabular} -->
-<!-- things that weren't expected.   -->
-<!-- other things of note   -->
+<p>Eight of the nine participants reported they felt more confident dosing with the tool than without. One participant said it did not affect their confidence. Although in general users reported greater confidence with the tool, the majority expressed concern with adopting it due to a lack of understanding of the models. As one participant noted the models are &quot;a bit of a 'black box'.&quot; Other users noted that they were concerned the tool was not adjusting for some specific complications. Another user noted they were concerned about adopting it given there has not been a validation trial for the technique. These concerns and others will be addressed in the following section.</p>
 <!-- blank lines at end -necessary for template -->
-<h1 id="retrospective-next-steps"><span class="header-section-number">6</span> Retrospective, Next Steps</h1>
+<h1 id="retrospective-and-next-steps"><span class="header-section-number">6</span> Retrospective and Next Steps</h1>
 <!--
 After the introductory chapter, it seems fairly common to 
 include a chapter that reviews the literature and 
 introduces methodology used throughout the thesis.
 -->
 <h2 id="challenges"><span class="header-section-number">6.1</span> Challenges</h2>
-<p>Although most participants expressed that the dosing tool gave them greater confidence, the majority also had reservations with adopting the tool in their practice. Their common concern involved their understanding of how the tool worked. This is concern good, as it reflects a conservative approach to experimenting on best practices. One reason for their lack of understanding can be attributed to the nature of this study, in that participants completed the survey on their own time and were given no incentives for completing the survey. As such, many users may have skimmed the system explanation quickly.<br />
+<p>Although most participants expressed that the dosing tool gave them greater confidence, the majority also had reservations with adopting the tool in their practice. Their common concern involved their understanding of how the tool worked. This is concern appropriate, as it reflects a conservative approach to experimenting on best practices. One reason for their lack of understanding can be attributed to the nature of this study, in that participants completed the survey on their own time and were given no incentives for completing the survey. As such, many users may have read the system explanation quickly.<br />
 Additionally, the technique used for dosing, although not terribly complex, is not trivial to understand. Physicians in general cannot be asked to learn how a logistic regression works or how these models are built. Simply speaking, their time is very valuable and limited. Thus, experimental techniques need to be validated in formal clinical setting with physicians who are invested in understanding and participating in a trial of the new tools. Another concern expressed was that the tool did not consider other potential features when dosing patients. Although these features can be added overtime, as the data becomes available and coded appropriately, this concern speaks to the greater issue of user interaction with the model. In its current state the standalone calculator allows physicians to view the weight-only model and the all features model. This gives them a better understanding of how these features change the therapeutic curve. Future versions of this tool should allow the user to enable and disable certain a given feature, so they can have a better understanding of the effects of the feature on the model outcome. This understanding could potentially come in the form of additional visualizations like the original graph or arguably better in the form of written descriptions, e.g. &quot;due to SOFA score causes a deviation of 3% from normal dosing.&quot; The initial version of this project included a crude nearest neighbor visualization, but that feature was not incorporated in the final version due to time limitations. Increasing user interaction with the tool will hopefully address some knowledge and trust issues with the current system.</p>
 <h2 id="shortcomings-in-the-survey"><span class="header-section-number">6.2</span> Shortcomings in the Survey</h2>
 <p>This study has no shortage of problems. The problems generally come from a lack of resources, in terms of time and money. A funded study would allow for a greater number of participants with specific domain expertise. Additionally the participant selection process would not be limited to friends of the researchers, which may have skewed the results. Funding would also allow for time for researchers to work with participants to better understand the model. Given the problems with the survey, and limited number of participants, the results are still very valuable as they clearly reveal areas for future improvement in the system.</p>
 <!-- ## Places for Future Research -->
 <!-- how did the doses differ in part 1 and part 2 of the survey.  -->
 <h2 id="implementation-differences-in-future-versions"><span class="header-section-number">6.3</span> Implementation Differences in Future Versions</h2>
-<p>The experimental nature of this project has lead to a software implementation that is limited in several ways. It served its primary purpose as a tool for a research study fairly well, but it is not &quot;real world&quot; ready in its current form. In future versions we'd like to see improved logging, system documentation, automated unit testing on builds, and better scaling performance (possibly utilizing redis). Additionally, the overall design should be more modular, such that it is easier to try out and compare different candidate models (e.g. Ensemble Learning, Neural Networks, SVMs, etc.) on different drugs. Automated testing could even run trial comparisons and compute statistics on models. From a data processing perspective, an entire subsystem should be designed and built for selecting data from the medical records database and translating it into a suitable form for models. There should also be tools for validating the cohort selection. This is not a trivial task when working with a specific medical record database, and becomes much more challenging when attempting to interface with other databases. Defining the generic interface used for selecting the cohort from the database will be challenging. Finally the data will also need to be validated and then translated (coded) to appropriate values for a given model. On the frontend, user analytics could be improved, as it would be ideal to know more about the user and how they interact on a per-click basis on the site. One final improvement on the client would be modifying the data model, such that instead of requesting an estimate for a specific patient, it requests a generic model that has been precomputed on the sever. Then the user can manually modify features and the estimated probability curves are computed client side. This should allow for a much more responsive experience for the user, providing them instantaneous feedback for each feature change made, instead requiring a request to have the server compute and return the results. These calculations could be done in a separate thread using web workers. Additionally, by implementing the predictions client side, patient data does not need to be transfered to an external server (increases HIPAA compliance), and the client can be fully functional offline which is ideal for low resource environments such as developing countries.</p>
+<p>The experimental nature of this project has lead to a software implementation that is limited in several ways. It served its primary purpose as a tool for a research study fairly well, but it is not &quot;real world&quot; ready in its current form. In future versions we'd like to see improved logging, system documentation, automated unit testing on builds, and better scaling performance (possibly utilizing redis). Additionally, the overall design should be more modular, such that it is easier to try out and compare different candidate models (e.g. Ensemble Learning, Neural Networks, SVMs, etc.) on different drugs. Automated testing could even run trial comparisons and compute statistics on models. From a data processing perspective, an entire subsystem should be designed and built for selecting data from the medical records database and translating it into a suitable form for models. There should also be tools for validating the cohort selection. This is not a trivial task when working with a specific medical record database, and becomes much more challenging when attempting to interface with other databases. Defining the generic interface used for selecting the cohort from the database will be challenging. Finally the data will also need to be validated and then translated (coded) to appropriate values for a given model.<br />
+On the frontend, user analytics could be improved, as it would be ideal to know more about the user's device and how they interact on a per-click basis. One final improvement on the client would be modifying the data model, such that instead of requesting an estimate for a specific patient, it requests a static model that has been precomputed on the sever. Then the user can manually modify features and the estimated probability curves are computed client side. This should allow for a much more responsive experience for the user, providing them instantaneous feedback for each feature change made, instead requiring a request to the server for each change. The dosage curves could be computed in a separate thread using web workers. Additionally, by implementing the predictions client side, patient data does not need to be transfered to an external server (easing HIPAA compliance), and the client can be fully functional offline which is ideal for low resource environments such as developing countries.</p>
 <!-- documented, tested, scalable, maintainable/easy to modify models, design well though out -->
 <!-- better build system -->
 <!-- better analytics/guidelines -->
@@ -519,7 +457,10 @@ include a chapter that reviews the literature and
 introduces methodology used throughout the thesis.
 -->
 <!-- ##   -->
-<p>Summary of work that was done, then summary of results. Then summary of places for future work.</p>
+<!-- Summary of work that was done, then summary of results. Then summary of places for future work.  -->
+<!-- Participants adjusted their doses 72% of time after reviewing the model, which resulted in a higher probability of therapeutic outcome in 82% of the adjustments. Additionally, participants reported greater confidence when using the tool but also expressed some hesitation with adopting the tool, often due to a lack of understanding of the underlying models. More information follows. Access to the extended survey results can be found in [Appendix 1](#appendix-1-full-survey-results). -->
+<p>The central focus of this study was to implement an interactive data-driven dosage tool and test its usability with medical doctors. While doing this we learned about domain specific, technical, and usability challenges. The goal of our work was to provide sufficient information such that a new version could be built and tested in a formal clinical setting. While the majority of participants felt more confident prescribing heparin using the tool, they also overwhelming expressed a need for a greater understanding of the underlying models making the predictions. This speaks to a usability problem that will be addressed in future versions by creating a more interactive, learning based tool. The future architecture presented will also open the door to dosing other drugs and trying out other models beyond logistic regression. These techniques will provide personalized insight in complex cases involving multiple drug interactions in unique patient cohorts. Without question, computers will aid in dosing drugs in the future, and this will improve the quality of patient care, while decreasing hospital stay times and the cost of care.</p>
+<!-- excited about building a system that that can apply this methdology to other drugs -->
 
 <!-- blank lines at end -necessary for template -->
 <h1 id="appendix-1-full-survey-results" class="unnumbered">Appendix 1: Full Survey Results</h1>
@@ -678,11 +619,23 @@ References are automatically generated from the BibTex file (References.bib)
 -->
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
+<div id="ref-ferri2003volume">
+<p>Ferri, C., Hernández-Orallo, J. &amp; Salido, M.A., 2003. Volume under the rOC surface for multi-class problems. In <em>Machine learning: ECML 2003</em>. Springer, pp. 108–120.</p>
+</div>
 <div id="ref-ghassemi2014data">
 <p>Ghassemi, M.M. et al., 2014. A data-driven approach to optimized medication dosing: A focus on heparin. <em>Intensive care medicine</em>, 40(9), pp.1332–1339.</p>
 </div>
+<div id="ref-UWHEP">
+<p>Lisa Gryttenholm, et a., Dan Hendrickson, 2004. Guidelines for the therapeutic dosing of heparin. Available at: <a href="http://www.uwhealth.org/files/uwhealth/docs/pdf2/Heparin_Infusion_Guideline.pdf" class="uri">http://www.uwhealth.org/files/uwhealth/docs/pdf2/Heparin_Infusion_Guideline.pdf</a>.</p>
+</div>
+<div id="ref-phd2014">
+<p>Reka G Szigeti, P., MD, 2014. Anti-xa assay. Available at: <a href="http://emedicine.medscape.com/article/2085000-overview" class="uri">http://emedicine.medscape.com/article/2085000-overview</a>.</p>
+</div>
 <div id="ref-MIMICII">
-<p>Saeed, M. et al., 2011. Multiparameter intelligent monitoring in intensive care iI (mIMIC-iI): A public-access intensive care unit database. <em>Critical Care Medicine</em>, 39, pp.952–960.</p>
+<p>Saeed, M. et al., 2011. Multiparameter intelligent monitoring in intensive care iI (mimic-ii): A public-access intensive care unit database. <em>Critical Care Medicine</em>, 39, pp.952–960.</p>
+</div>
+<div id="ref-universityofwashingtonpharmacyservices2014">
+<p>Washington Pharmacy Services, U. of, 2014. Heparin infusion guidelines. Available at: <a href="https://depts.washington.edu/anticoag/home/content/heparin-infusion-guidelines" class="uri">https://depts.washington.edu/anticoag/home/content/heparin-infusion-guidelines</a>.</p>
 </div>
 </div>
             </body>

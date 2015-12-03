@@ -51,93 +51,11 @@ Median Dose & 18 & 20 & 18 & 14 & 13 & 16 & 15 & 15 & 16 & 18 \\ \hline
 Each of the eight participants prescribed heparin twice to five different patients, yielding a total of 80 infusion rates. In Table \ref{table:ir}, for each patient there is a suggested optimal infusion rate (IR) in the top header. This is the number that was displayed to the user after they entered their initial infusion rate *IR1*. *IR2* is the value they prescribed after viewing the optimal dosage curve and the suggested infusion rate.  
 In the 40 trials, participants choose only 11 times to maintain their initial infusion rate. In other words, 72% of the time participants adjusted their dose after viewing the model's suggested dose. In five of the 29 times that a change was made, the change resulted in lower probability of a therapeutic outcome than the original dose. All five of these events occurred with participant number one, which may reflect the user struggling to understand how to use the tool.
 
-As for the reasoning for adjusting doses, they vary greatly as can be seen in the appendix in Table \ref{table:YESNO}. Those who choose to adjust towards the model values generally expressed trust in the model, while some users, in particularly those who currently prescribe heparin frequently where more wary of it. Some users explained they wanted to adjust the infusion rate based features that were considered in the model, or that they would want to adjust based on Anti-Xa Assay (an assay designed to monitor anticoagulant therapy.) Others expressed that their initial dose was close enough, and that they preferred round numbers, since dosing in non-integer units is not always possible. 
-<!-- expand on this!!!! -->
+As for the reasoning for adjusting doses, they vary greatly as can be seen in the appendix in Table \ref{table:YESNO}. Those who choose to adjust towards the model values generally expressed trust in the model, while some users, in particularly those who currently prescribe heparin frequently where more wary of it. Some users explained they wanted to adjust the infusion rate based features that were considered in the model, or that they would want to adjust based on Anti-Xa Assay (an assay designed to monitor anticoagulant therapy [@phd2014].) Others expressed that their initial dose was close enough, and that they preferred round numbers, since dosing in non-integer units is not always possible. 
 
-
-<!-- ## Time differences -->
-
-<!-- time difference in part 1 and part 2.   -->
-<!-- maybe add some graphs here.   -->
 ## User Feedback
 
 Eight of the nine participants reported they felt more confident dosing with the tool than without. One participant said it did not affect their confidence. Although in general users reported greater confidence with the tool, the majority expressed concern with adopting it due to a lack of understanding of the models. As one participant noted the models are "a bit of a 'black box'." Other users noted that they were concerned the tool was not adjusting for some specific complications. Another user noted they were concerned about adopting it given there has not been a validation trial for the technique. These concerns and others will be addressed in the following section.
-<!-- add some type of closing or transition ??? -->
-
-
-<!-- ## User Comments  -->
-<!-- just state comments here - address them more fully in the next section. -->
-
-<!-- requesting more information  -->
-	<!-- understanding -->
-<!-- round off the drug -->
-
-
-
-
-
-<!-- .... -->
-
-<!-- ## Other results -->
-
-<!-- Something about other results... blah blah blah.  -->
-
-
-<!-- 
-\begin{table}
-\centering
-\caption{My caption}
-\label{my-label}
-% \begin{adjustbox}{max width=\textwidth}
-% \setlength{\tabcolsep}{1pt}
-% \setlength{\extrarowheight}{1.5pt}
-\begin{tabulary}{17cm}{L|LCR|LCR|LCR|LCR|LCR}
-\hline
- &\multicolumn{3}{l|}{Patient 1}&\multicolumn{3}{l|}{Patient 2}&\multicolumn{3}{l|}{Patient 3}&\multicolumn{3}{l|}{Patient 4}&\multicolumn{3}{l|}{Patient 5}\\
-\cline{2-16}
-% \begin{tabularx}{0.5\textwidth}{|l|XXX|XXX|XXX|XXX|XXX|}
-%                            & Patient 1 &      &         & Patient 2 &      &         & Patient 3 &      &         & Patient 4 &      &         & Patient 5 &      &         \\
-% Suggested IR               & 19.7      &      &         & 13.3      &      &         & 15.9      &      &         & 14.4      &      &         & 17.5      &      &         \\ \hline
-%                            Participant & IR 1      & IR 2 & \% Diff & IR 1      & IR 2 & \% Diff & IR 1      & IR 2 & \% Diff & IR 1      & IR 2 & \% Diff & IR 1      & IR 2 & \% Diff \\ \hline
-% 1 & 18 & 25 & 38.9\% & 18 & 19 & 5.6\% & 18 & 20 & 11.1\% & 18 & 26 & 44.4\% & 20 & 24 & 20.0\% \\
-Suggested IR (Units/Kg/HR) & 19.7 &  &  & 13.3 &  &  & 15.9 &  &  & 14.4 &  &  & 17.5 &  &  \\ \hline
-Participant & IR 1 & IR 2 & \% Diff & IR 1 & IR 2 & \% Diff & IR 1 & IR 2 & \% Diff & IR 1 & IR 2 & \% Diff & IR 1 & IR 2 & \% Diff \\ \hline
-1 & 18 & 25 & 39\% & 18 & 19 & 6\% & 18 & 20 & 11\% & 18 & 26 & 44\% & 20 & 24 & 20\% \\
-2 & 18 & 19.8 & 10\% & 18 & 13.9 & 23\% & 13 & 16 & 23\% & 12 & 14.7 & 23\% & 13 & 17.6 & 35\% \\
-3 & 18 & 20.3 & 13\% & 80 & 14.1 & 82\% & 18 & 16.4 & 9\% & 18 & 15 & 17\% & 18 & 18 & 0\% \\
-4 & 12 & 12 & 0\% & 15 & 15 & 0\% & 12 & 15.9 & 33\% & 15 & 15 & 0\% & 12 & 17.3 & 44\% \\
-5 & 18 & 19.6 & 9\% & 18 & 13.7 & 24\% & 12 & 15.9 & 33\% & 18 & 14.5 & 19\% & 12 & 17.4 & 45\% \\
-6 & 18 & 18 & 0\% & 18 & 18 & 0\% & 13 & 13 & 0\% & 12 & 14.8 & 23\% & 0 & 0 & 0\% \\
-7 & 18 & 19.6 & 9\% & 18 & 13.6 & 24\% & 17 & 16 & 6\% & 15 & 15 & 0\% & 18 & 18 & 0\% \\
-8 & 18 & 19.7 & 9\% & 18 & 13.8 & 23\% & 13 & 16 & 23\% & 12 & 14.7 & 23\% & 18 & 18 & 0\% \\
-Min Dose & 12 & 12 & 0\% & 15 & 13.6 & 0\% & 12 & 13 & 0\% & 12 & 14.5 & 0\% & 0 & 0 & 0\% \\
-Max Dose & 18 & 25 & 39\% & 80 & 19 & 82\% & 18 & 20 & 33\% & 18 & 26 & 44\% & 20 & 24 & 45\% \\
-Standard Deviation & 2 & 4 & 12\% & 22 & 2 & 26\% & 3 & 2 & 12\% & 3 & 4 & 14\% & 6 & 7 & 21\% \\
-Mean Dose & 17 & 19 & 11\% & 25 & 15 & 23\% & 15 & 16 & 17\% & 15 & 16 & 19\% & 14 & 16 & 18\% \\
-Median Dose & 18 & 20 & 9\% & 18 & 14 & 23\% & 13 & 16 & 17\% & 15 & 15 & 21\% & 16 & 18 & 10\% \\
-% Mean Dose Change / Patient &  &  & 10\% &  &  & 20\% &  &  & 15\% &  &  & 17\% &  &  & 16\% \\
-% \end{tabularx}
-\end{tabulary}
-% \end{adjustbox}
-\end{table}
-
-\begin{tabular}{|l||l|l||l|l|}
-\hline
- &\multicolumn{2}{l|}{Singular}&\multicolumn{2}{l|}{Plural}\\
-\cline{2-5}
- &English&\textbf{Gaeilge}&English&\textbf{Gaeilge}\\
-\hline\hline
-1st Person&at me&\textbf{agam}&at us&\textbf{againn}\\
-2nd Person&at you&\textbf{agat}&at you&\textbf{agaibh}\\
-3rd Person&at him&\textbf{aige}&at them&\textbf{acu}\\
- &at her&\textbf{aici}& & \\
-\hline
-\end{tabular} -->
-
-
-<!-- things that weren't expected.   -->
-<!-- other things of note   -->
-
 
 <!-- blank lines at end -necessary for template -->
 
