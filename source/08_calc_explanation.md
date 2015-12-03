@@ -11,16 +11,16 @@ This project is composed of two key components. The first is a "dose calculator"
 <!-- talk about user experience/ui design. -->
 
 ## Functional Requirements 
-The purpose of the calculator is to determine the probability functions for sub-therapeutic, therapeutic, supra-therapeutic aPTT for a range of infusion amounts for a given patient. The calculator can be broken into three steps:  
-1. Access and refine Dataset  
+The purpose of the calculator is to determine the probability functions for sub-therapeutic, therapeutic, supra-therapeutic aPTT for a range of infusion amounts for a given patient. The calculation can be broken into three steps:  
+1. Access and refine the dataset  
 2. Calculate static models  
 3. Make a prediction based on a given patient's features. 
 
 ### Data Processing
 
-The data source for the original study was the MIMIC II database [citation]. MIMIC is an open access database consisting of over 40,000 deidentified patient encounters from Beth Israel Deaconess Hospital's ICUs. It is hosted at MIT's Lab for Computational Physiology. The majority of patients in an ICU do not receive heparin, so filtering by medication was needed. This was accomplished by a series of SQL queries on a local machine. Furthermore, we worked to maintain an identical dataset as was used in the original dataset. This required filtering out all transfer patients and all patients missing required features. Additionally some features viz. Elixhauser comorbidity index, mean Sequential Organ Failure Assessment (SOFA), required manual calculation on a per patient basis, as they were not available directly from MIMIC. This yielded a dataset of approximately 1,600 patients. This number varies depending on the features supplied for a given prediction.  
+The data source for the original study was the MIMIC II database. MIMIC is an open access database consisting of over 40,000 deidentified patient encounters from Beth Israel Deaconess Hospital's ICUs. It is hosted at MIT's Lab for Computational Physiology. The majority of patients in an ICU do not receive heparin, so filtering by medication was needed. This was accomplished by a series of SQL queries on a local machine. Furthermore, we worked to maintain an identical dataset as was used in the original dataset. This required filtering out all transfer patients and all patients missing required features. Additionally some features viz. Elixhauser comorbidity index, mean Sequential Organ Failure Assessment (SOFA), required manual calculation on a per patient basis, as they were not available directly from MIMIC. This yielded a dataset of approximately 1,600 patients. This number varies depending on the features supplied for a given prediction.  
 
-This data munging was primarily done in Python using the Pandas library, but also required PostgreSQL for hosting the database. SQL queries were composed by hand. To prepare the data for model generation we needed to code several variables. Specifically, we needed to add binary classifiers for sub-therapeutic and supra-therapeutic to each patients dataset. Additionally a binary classifier was needed for ethnicity, and we followed the original coding used in the paper (white and non-white). 
+This data munging was primarily done in Python using the Pandas library, but also required PostgreSQL for hosting the database. SQL queries were composed by hand. To prepare the data for model generation we needed to code several variables. Specifically, we needed to add binary classifiers for sub-therapeutic and supra-therapeutic aPTT to each patients dataset. Additionally a binary classifier was needed for ethnicity, and we followed the original coding used in the paper (white and non-white). 
 
 <!-- 
 talk about mimic ii / iii - was it, wheres it from etc. 
@@ -36,11 +36,7 @@ then talk about tech I used to do this
 
 ### Model Generation
 
-Once the dataset was prepared, generating the models was fairly simple. We used the Python library Scikit-learn's implementation of multinomial Logistic Regression to compute the two logistic regressions. Once the two logistic regressions for sub-therapeutic and supra-therapeutic aPTT are generated they can be stored for later use as long as the dataset is static. We avoided doing this to simulate a real world scenario where data is constantly being added overtime. 
-<!-- 
-need to generate the 2 models using the features in python and x function calls.
-
- -->
+Once the dataset was prepared, generating the models was fairly simple. We used the Python library Scikit-learn's implementation of multinomial Logistic Regression to compute the two logistic regressions. Once the two logistic regressions for sub-therapeutic and supra-therapeutic aPTT are generated they can be stored for later use as long as the dataset has not changed.
   
 ### Model Prediction
 

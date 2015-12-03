@@ -4,7 +4,7 @@
 <!-- This could be a list of papers by the author for example  -->
 <!-- Also tutorials/people/stack overflow that was helpful.  -->
 <!-- tom's markdown -> latex  -->
-Below are selected screenshots of the calculator application and survey application in use. You encouraged to try them out yourself directly at [https://hepstack-stage.herokuapp.com/](https://hepstack-stage.herokuapp.com/).
+Below are screenshots of the calculator application and survey application in use. You encouraged to try them out yourself directly at [https://hepstack-stage.herokuapp.com/](https://hepstack-stage.herokuapp.com/).
 
 ## Calculator Interface
 

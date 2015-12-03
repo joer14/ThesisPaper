@@ -19,8 +19,9 @@ Additionally the following people were very influential in preparing me for this
 <!-- - [Leo Celi](https://connects.catalyst.harvard.edu/profiles/display/person/58103)  -->
 <!-- maybe add Kenneth Paik / Sana -->
 
+Finally, this project would not have been possible without the unwavering moral and technical support of my parents Howard Rowley and Carol Diamond.
   
-Finally, this project would not have been possible without the unwavering moral and technical support of my parents [Howard Rowley](http://www.uwhealth.org/findadoctor/profile/howard-a-rowley-md/7329) and [Carol Diamond](http://www.uwhealth.org/findadoctor/profile/carol-a-diamond-md/5867).
+<!-- Finally, this project would not have been possible without the unwavering moral and technical support of my parents [Howard Rowley](http://www.uwhealth.org/findadoctor/profile/howard-a-rowley-md/7329) and [Carol Diamond](http://www.uwhealth.org/findadoctor/profile/carol-a-diamond-md/5867). -->
 
 <!-- Use the \newpage command to force a new page -->
 

@@ -127,7 +127,7 @@ Participant & Question 4 - Other Comments \\ \hline
 
 \begin{table}[H]
 \centering
-\caption{Timing Results}
+\caption{Timing Results, Where T1 is amount of time in seconds between displaying the case and the doctors first dose is prescribed and where T2 is amount of time in seconds that the doctor viewed the model before submitting their second dose.}
 \label{table:timing}
 \begin{adjustbox}{max width=\textwidth}
 
