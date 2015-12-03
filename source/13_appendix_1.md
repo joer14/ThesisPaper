@@ -3,27 +3,32 @@
 <!-- 
 This could be a list of papers by the author for example 
 -->
-\begin{table}[H]
-\centering
-\caption{Bolus Information}
-\label{my-label}
-\begin{tabular}{|l|lllll|}
-\hline
-Participant & Patient 1 & Patient 2 & Patient 3 & Patient 4 & Patient 5 \\ \hline
-1 & 80 & 80 & 60 & 80 & 60 \\
-2 & 80 & 60 & 0 & 40 & 0 \\
-3 & 5000 & 5000 & 80 & 80 & 80 \\
-4 & 5000 & 6000 & 3500 & 6000 & 5400 \\
-5 & 80 & 80 & 0 & 80 & 0 \\
-6 & 80 & 80 & 0 & 44.5 & 0 \\
-7 & 80 & 80 & 0 & 60 & 80 \\
-8 & 80 & 80 & 0 & 60 & 80 \\ \hline
-\end{tabular}
-\end{table}
+* Project Resources
+    * [Link to Git Repository Archive (Password Protected)](https://hepstack-stage.herokuapp.com/code)
+    * [Link to Raw Survey Results Data](https://hepstack-stage.herokuapp.com/responses)
+
+## Presurvey Questionnaire:
+1. What are your credentials? - MD - MD/PhD - NP - Other  
+2. What is primary medical specialty? - (e.g. Obstetrics)  
+3. How long have you been practicing in a clinical setting? - (e.g. 10 years)   
+4. In your current position how often do you prescribe heparin or other anticoagulants?
+	- Frequently - (at least once a week)
+	- Infrequently - (once a month)
+	- Rarely - (once a year or so)
+	- Never
+5. In the past did you ever prescribe heparin or other anticoagulants more frequently? If so, how often?
+	- Frequently - (at least once a week)  
+	- Infrequently - (once a month)
+	- Rarely - (once a year or so)
+	- Never - I haven’t prescribed heparin or other anticoagulants
+6. Have you ever worked in an ICU? If so, to what extent?
+	- (e.g During my residency I had 2 rotations lasting roughly 10 weeks each in different ICUs.) 
+
+
 
 \begin{table}[H]
 \centering
-\caption{Presurvey Results Part 1.}
+\caption{Presurvey Results Questions 1-5}
 \label{my-label}
 \begin{adjustbox}{max width=\textwidth}
 \begin{tabulary}{1.5\textwidth}{|L|LLLLL|}
@@ -44,7 +49,7 @@ Participant & Credential & Specialty & Years Practicing & Current Heparin Experi
 \begin{table}[H]
 \centering
 \begin{adjustbox}{max width=\textwidth}
-\caption{Presurvey Results Part 2.}
+\caption{Presurvey Results Question 6}
 \label{my-label}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
@@ -61,13 +66,22 @@ Participant & ICU Experience \\ \hline
 \end{adjustbox}
 \end{table}
 
+## Follow Up Survey
+1. Did you feel more confident prescribing heparin when using the models?
+	- I felt more confident using the models.  
+	- I felt less confident using the models.
+	- The models did not affect my confidence.
+2. What hesitations do you have about adopting statistical dosing tools?					
+3. Are there any specific areas you’d like to see a tool like this being used?					
+4. If you have any further comments, questions, suggestions, ideas for improvement, etc please enter them below.					
+
 \begin{table}[H]
 \centering
-\caption{Post Survey Responses Question 1 and Question 2}
+\caption{Follow Up Survey Responses Question 1 and Question 2}
 \label{my-label}
 \begin{tabularx}{\textwidth}{|l|l|X|}
 \hline
- & Q1 & Question 2 \\ \hline
+ & Q1 & Question 2 - Hesitations \\ \hline
 1 & More & need a bit more data about renal function and overall status \\ \hline
 2 & More & You are stepping out of the realm of current standard practice. You are relying on 1) the data used in the model reflecting the patient group seen in your practice, 2) the statistical methods used being the most appropriate. \\ \hline
 3 & More & A bit of a 'black box' - I would want to see more about validation before fully implementing \\ \hline
@@ -82,11 +96,11 @@ Participant & ICU Experience \\ \hline
 
 \begin{table}[H]
 \centering
-\caption{Post Survey Responses Question 3}
+\caption{Follow up  Survey Responses Question 3}
 \label{my-label}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-Participant & Question 3 \\ \hline
+Participant & Question 3 - Other Areas \\ \hline
 1 & yes - in the ICU \\ \hline
 2 & Potentially this could be a great tool for patients on multiple drugs simultaneously - are there models that will help predict more accurately what type of dose adjustments should be made for patients on multiple heart failure meds e.g. \\ \hline
 3 & Other pharmaceuticals, e.g. antibiotics requiring levels (Vancomycin, Gentamycin, etc) \\ \hline
@@ -101,15 +115,34 @@ Participant & Question 3 \\ \hline
 
 \begin{table}[H]
 \centering
-\caption{Post Survey Responses Question 4}
+\caption{Follow up  Survey Responses Question 4}
 \label{my-label}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-Participant & Question 3 \\ \hline
+Participant & Question 4 - Other Comments \\ \hline
 2 & It would be interesting to know if the dosing model works the same, or similarly among different patient groups (race, sex, BMI etc) and if not are there ways to adapt for these factors.,The dosing tool model is an excellent idea. \\ \hline
 8 & Create your own web page where people can go and use....similar to Angiocalc.com \\ \hline
 9 & Would be good to get one more feedback calculation after adjusted the dose for a confirmation since I made mistakes by a factor of 10 \\ \hline
 \end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Bolus Information}
+\label{my-label}
+\begin{tabular}{|l|lllll|}
+\hline
+Participant & Patient 1 & Patient 2 & Patient 3 & Patient 4 & Patient 5 \\ \hline
+1 & 80 & 80 & 60 & 80 & 60 \\
+2 & 80 & 60 & 0 & 40 & 0 \\
+3 & 5000 & 5000 & 80 & 80 & 80 \\
+4 & 5000 & 6000 & 3500 & 6000 & 5400 \\
+5 & 80 & 80 & 0 & 80 & 0 \\
+6 & 80 & 80 & 0 & 44.5 & 0 \\
+7 & 80 & 80 & 0 & 60 & 80 \\
+8 & 80 & 80 & 0 & 60 & 80 \\ \hline
+\end{tabular}
 \end{table}
 
 

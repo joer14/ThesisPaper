@@ -192,10 +192,13 @@
                 <li><a href="#implementation-differences-in-future-version"><span class="toc-section-number">6.3</span> Implementation Differences in future version</a></li>
                 </ul></li>
                 <li><a href="#conclusion"><span class="toc-section-number">7</span> Conclusion</a></li>
-                <li><a href="#appendix-1-full-survey-results">Appendix 1: Full Survey Results</a></li>
+                <li><a href="#appendix-1-full-survey-results">Appendix 1: Full Survey Results</a><ul>
+                <li><a href="#presurvey-questionnaire"><span class="toc-section-number">7.1</span> Presurvey Questionnaire:</a></li>
+                <li><a href="#follow-up-survey"><span class="toc-section-number">7.2</span> Follow Up Survey</a></li>
+                </ul></li>
                 <li><a href="#appendix-2-application-user-interface">Appendix 2: Application User Interface</a><ul>
-                <li><a href="#calculator-interface"><span class="toc-section-number">7.1</span> Calculator Interface</a></li>
-                <li><a href="#survey-interface"><span class="toc-section-number">7.2</span> Survey Interface</a></li>
+                <li><a href="#calculator-interface"><span class="toc-section-number">7.3</span> Calculator Interface</a></li>
+                <li><a href="#survey-interface"><span class="toc-section-number">7.4</span> Survey Interface</a></li>
                 </ul></li>
                 <li><a href="#references">References</a></li>
                 </ul>
@@ -365,7 +368,7 @@ talk about how I used the maximization function to maximize the probability of t
 <h3 id="frontend"><span class="header-section-number">3.2.1</span> Frontend</h3>
 
 <p>The frontend for the application was built in Angular.js. Angular.js is client-side MVC (Model View Controller) framework that was chosen for it's strengths in quick prototyping. The user interface was built on Twitter Bootstrap, as it was familiar to the authors, is relatively easy to use and offers built in responsive design. Additionally, it has many CSS components such as nice forms and progress bars that are useful for the design.<br />
-For graphing the D3.js, NV-D3 and Angular-nvd3 libraries were used which enables inserting graphs using simple directives. Figure  shows an example output of the standalone calculator as seen on <a href="https://hepstack-stage.herokuapp.com/#/calc">/#/calc</a>.</p>
+For graphing the D3.js, NV-D3 and Angular-nvd3 libraries were used which enables inserting graphs using simple directives. Figure  shows an example output of the standalone calculator as seen in <a href="#appendix-2-application-user-interface">Appendix 2</a> or <a href="https://hepstack-stage.herokuapp.com/#/calc">online</a>.</p>
 <!-- explain this is a standalone version
 include screen shot maybe? 
 explain how user interacts with this on the frontend 
@@ -394,8 +397,8 @@ include a chapter that reviews the literature and
 introduces methodology used throughout the thesis.
 -->
 <h2 id="survey-design"><span class="header-section-number">4.1</span> Survey Design</h2>
-<p>The primary objective of the survey was to learn about the user experience challenges involved with data-driven dosage techniques. To do this a test interface was developed and several medical doctors of varying disciplines attempted to use it. The survey consisted of 5 patient cases developed by domain experts to cover multiple different use cases for heparin. A doctor would first agree to a research disclosure, then fill out a short questionnaire about their background and relevant experience. Next an instruction page was displayed explaining the survey. Once the doctor read over the instructions and guidelines, they were presented with their first case which consists of some lab results and a short admission note. It was their task to determine a potential infusion rate based on traditional heparin dosing guidelines that were available to them. After choosing an infusion rate, the optimal dose model was displayed, along with the location of the users dose. The doctor then had the option of either adjusting the dose or sticking with their initial dose. Whenever dosing the doctor was able to leave notes to explain their reasoning. This task then was repeated for the remaining four patients. After completing the test, there was a short follow-up questionnaire consisting of a few questions to gauge receptiveness to the tool and measure any change in confidence in the tool. Additionally, we asked for other places they thought the tool could be used.<br />
-To do limitations of funding we could not compensate doctors for their time taking the test. As a result all volunteers were acquaintances or friend's of friends of the author.</p>
+
+<p>The primary objective of the survey was to learn about the user experience challenges involved with data-driven dosage techniques. To do this a test interface was developed and several medical doctors of varying disciplines attempted to use it. You can view the interface <a href="https://hepstack-stage.herokuapp.com/">online</a> or in <a href="#appendix-2-application-user-interface">Appendix 2</a>. The survey consisted of five patient cases developed by domain experts to cover multiple different use cases for heparin. A doctor would first agree to a research disclosure, then fill out a short questionnaire about their background and relevant experience (figure ). Next an instruction page was displayed explaining the survey (figure , ). Once the doctor read over the instructions and guidelines, they were presented with their first case which consists of some lab results and a short admission note (figure ). It was their task to determine a potential infusion rate based on traditional heparin dosing guidelines that were available to them. After choosing an infusion rate, the optimal dose model was displayed (figure ). Unlike the standalone calculator, with the survey version of the graph does not present the weight-only model. It does however plot the user's initial infusion rate on the estimated therapeutic curve in black, so they can visualize the estimated dose versus their own dose (figure ). The doctor then had the option of either adjusting the dose or sticking with their initial dose. Whenever dosing the doctor was able to leave notes to explain their reasoning. This task then was repeated for the remaining four patients. After completing the test, there was a short follow-up questionnaire consisting of a few questions to gauge receptiveness to the tool and measure any change in confidence in the tool. Additionally, participants were asked for other places they thought the tool could be used(figure ). Due to financial and scope limitations, we could not compensate participants for their time taking the survey. As a result all volunteers were acquaintances or friend's of friends of the author.</p>
 <!-- Additionally, we wanted to learn about any advantages and disadvantages the technique brings to doctors. To do thi -->
 <!-- what the goals of the survey were. - what did we want to learn? hypothesis      -->
 <!-- how the survey was conducted.  -->
@@ -514,8 +517,58 @@ introduces methodology used throughout the thesis.
 <!-- 
 This could be a list of papers by the author for example 
 -->
+<ul>
+<li>Project Resources
+<ul>
+<li><a href="https://hepstack-stage.herokuapp.com/code">Link to Git Repository Archive (Password Protected)</a></li>
+<li><a href="https://hepstack-stage.herokuapp.com/responses">Link to Raw Survey Results Data</a></li>
+</ul></li>
+</ul>
+<h2 id="presurvey-questionnaire"><span class="header-section-number">7.1</span> Presurvey Questionnaire:</h2>
+<ol style="list-style-type: decimal">
+<li>What are your credentials? - MD - MD/PhD - NP - Other<br />
+</li>
+<li>What is primary medical specialty? - (e.g. Obstetrics)<br />
+</li>
+<li>How long have you been practicing in a clinical setting? - (e.g. 10 years)<br />
+</li>
+<li>In your current position how often do you prescribe heparin or other anticoagulants?
+<ul>
+<li>Frequently - (at least once a week)</li>
+<li>Infrequently - (once a month)</li>
+<li>Rarely - (once a year or so)</li>
+<li>Never</li>
+</ul></li>
+<li>In the past did you ever prescribe heparin or other anticoagulants more frequently? If so, how often?
+<ul>
+<li>Frequently - (at least once a week)<br />
+</li>
+<li>Infrequently - (once a month)</li>
+<li>Rarely - (once a year or so)</li>
+<li>Never - I haven’t prescribed heparin or other anticoagulants</li>
+</ul></li>
+<li>Have you ever worked in an ICU? If so, to what extent?
+<ul>
+<li>(e.g During my residency I had 2 rotations lasting roughly 10 weeks each in different ICUs.)</li>
+</ul></li>
+</ol>
 
 
+<h2 id="follow-up-survey"><span class="header-section-number">7.2</span> Follow Up Survey</h2>
+<ol style="list-style-type: decimal">
+<li>Did you feel more confident prescribing heparin when using the models?
+<ul>
+<li>I felt more confident using the models.<br />
+</li>
+<li>I felt less confident using the models.</li>
+<li>The models did not affect my confidence.</li>
+</ul></li>
+<li>What hesitations do you have about adopting statistical dosing tools?<br />
+</li>
+<li>Are there any specific areas you’d like to see a tool like this being used?<br />
+</li>
+<li>If you have any further comments, questions, suggestions, ideas for improvement, etc please enter them below.</li>
+</ol>
 
 
 
@@ -582,9 +635,9 @@ Unordered sub-list.
 <!-- Also tutorials/people/stack overflow that was helpful.  -->
 <!-- tom's markdown -> latex  -->
 <p>Below are selected screenshots of the calculator application and survey application in use. You encouraged to try them out yourself directly at <a href="https://hepstack-stage.herokuapp.com/" class="uri">https://hepstack-stage.herokuapp.com/</a>.</p>
-<h2 id="calculator-interface"><span class="header-section-number">7.1</span> Calculator Interface</h2>
+<h2 id="calculator-interface"><span class="header-section-number">7.3</span> Calculator Interface</h2>
 
-<h2 id="survey-interface"><span class="header-section-number">7.2</span> Survey Interface</h2>
+<h2 id="survey-interface"><span class="header-section-number">7.4</span> Survey Interface</h2>
 
 <!-- [Link](https://hepstack-stage.herokuapp.com/#/presurvey) -->
 
