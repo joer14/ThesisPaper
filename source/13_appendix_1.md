@@ -114,7 +114,7 @@ Participant & Question 3 - Other Areas \\ \hline
 \begin{table}[H]
 \centering
 \caption{Follow up  Survey Responses Question 4}
-\label{my-label}
+\label{table:followup}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 Participant & Question 4 - Other Comments \\ \hline

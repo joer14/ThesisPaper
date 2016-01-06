@@ -55,6 +55,12 @@ Below are screenshots of the calculator application and survey application in us
 \includegraphics[width=1\textwidth]{source/figures/postsurvey.png}
 \caption{\label{fig:postsurvey}The questionnaire presented to study participants after dosing all patients in the previous section.}
 \end{figure}
+
+\begin{figure}[H]
+\noindent
+\includegraphics[width=1\textwidth]{source/figures/old.png}
+\caption{\label{fig:old}An example of one of the interfaces created during testing. It allowed for extended testing with the same patient. This methodology was not used since a suitable technique for predicting aPTT outcomes for greater than 6 hours hasn't been studied significantly, and we wanted users to feel patient results were realistic.}
+\end{figure}
 <!-- [Link](https://hepstack-stage.herokuapp.com/#/postsurvey) -->
 
 \newpage
